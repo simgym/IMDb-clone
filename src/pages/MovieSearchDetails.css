@@ -1,0 +1,114 @@
+.movie-details-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  justify-content: center; /* Center the content horizontally */
+}
+
+.movie_title {
+  text-align: left;
+  margin-left: 225px;
+  margin-bottom: 40px;
+}
+
+.poster-container {
+  /* Update styling for the poster container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail_poster {
+  width: 250px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-top: 0; /* Remove the top margin */
+}
+
+.detail_poster img {
+  width: 100%;
+  max-height: 350px;
+  display: block;
+}
+.movie_tagline {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.movie_details {
+  border: 1px solid #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60%;
+}
+
+.movie_overview {
+  flex: 1;
+  font-size: 16px;
+  margin-top: 20px; /* Add margin to separate it from the details below */
+}
+
+.movie_genres_details {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping if necessary */
+}
+
+.genres-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.genres_title {
+  margin-right: 5px;
+  color: yellow;
+}
+
+.movie_status {
+  margin-right: 5px;
+}
+.movie_status_title {
+  color: yellow;
+}
+.movie_status-yellow {
+  color: yellow;
+}
+.movie_language-yellow {
+  color: yellow;
+}
+
+.genre-item {
+  margin-right: 5px;
+}
+
+.detail_container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.video_container {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 400px;
+  overflow-y: auto;
+  justify-content: center;
+}
+
+.video_container li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.watchlist_error {
+  color: yellow;
+}

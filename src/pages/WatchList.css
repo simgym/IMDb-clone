@@ -1,0 +1,18 @@
+.watchlist_poster-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.watchlist_poster-container ul li {
+  flex: 1 0 30%; /* This will make sure that there are maximum 3 items in a row */
+  margin: 10px;
+  max-width: 300px; /* This will limit the width of each poster */
+}
+
+.watchlist_poster-container ul li img {
+  width: 20%;
+  height: 10%;
+  max-width: 20%; /* This will ensure that the image does not exceed its parent's width */
+  object-fit: cover; /* This will crop the images to fit the box, preserving their aspect ratio */
+}

@@ -1,0 +1,23 @@
+.signup_error {
+  color: red;
+}
+.signup_form {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.signup_form div {
+  margin-bottom: 10px;
+}
+
+.signup_form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signup_form input {
+  margin-bottom: 10px;
+}

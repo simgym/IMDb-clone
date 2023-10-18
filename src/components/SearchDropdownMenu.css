@@ -1,0 +1,57 @@
+.modal {
+  position: fixed;
+  top: 6.3vh;
+  left: 5%;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+.items:hover {
+  background-color: rgb(221, 215, 245);
+}
+
+.modal ul {
+  list-style: none;
+}
+
+.modal ul li {
+  border-bottom: 1px solid grey;
+  padding: 10px 0;
+}
+
+.content {
+  max-height: 150px; /* Adjust the value as needed */
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    margin-top: 2.2%;
+    width: auto;
+    left: 5%;
+    right: 5%;
+
+    transform: translateY(-50%);
+  }
+
+  .modal:active {
+    background-color: rgb(221, 215, 245);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

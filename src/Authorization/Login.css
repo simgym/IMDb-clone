@@ -1,0 +1,23 @@
+.login_error {
+  color: red;
+}
+.login_form {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.login_form div {
+  margin-bottom: 10px;
+}
+
+.login_form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login_form input {
+  margin-bottom: 10px;
+}
