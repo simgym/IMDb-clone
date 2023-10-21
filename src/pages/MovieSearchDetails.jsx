@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import CommentSection from "../components/CommentSection";
+
 import "./MovieSearchDetails.css";
+
+import SearchedCommentSection from "../components/searchedCommentSection";
 
 const MovieSearchDetails = () => {
   const IDNumber = localStorage.getItem("searchedId");
@@ -208,6 +210,9 @@ const MovieSearchDetails = () => {
               <Link to="/signup">Sign up</Link>
             </div>
           )}
+          <div>
+            <SearchedCommentSection />
+          </div>
         </div>
       </div>
     </>

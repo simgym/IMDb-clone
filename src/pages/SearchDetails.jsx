@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./SearchDetails.css";
 import MovieSearchDetails from "./MovieSearchDetails";
 import ShowsSearchDetails from "./ShowsSearchDetails";
 
 const SearchDetails = () => {
-  const [moviesIdList, setMoviesIdList] = useState([]);
-  const [showMovie, setShowMovie] = useState(false);
+  const { searchId } = useParams();
+  const [movieId, setMovieId] = useState(localStorage.getItem("searchedId"));
+  const [showName, setShowName] = useState(
+    localStorage.getItem("searchedName")
+  );
 
-  const movieId = localStorage.getItem("searchedId");
-  const showName = localStorage.getItem("searchedName");
+  useEffect(() => {
+    setMovieId(localStorage.getItem("searchedId"));
+    setShowName(localStorage.getItem("searchedName"));
+  }, [searchId]);
 
   return (
     <>

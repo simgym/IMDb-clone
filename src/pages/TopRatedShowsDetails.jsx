@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { IDAction } from "../store/IDStorage";
+import "./PopularMoviesDetails.css"; // Import your CSS file
 import { getDatabase, ref, push, get } from "firebase/database";
-import PopularShowCommentSection from "../components/PopularShowsCommentSection";
-import "./TrendingShowsDetails.css";
+import { getAuth } from "firebase/auth";
+import { Link } from "react-router-dom";
+import TopRatedShowComment from "../components/TopRatedShowComments";
 
-const TrendingShowDetails = () => {
+const TopRatedShowsDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});
   const [showVideosList, setShowVideosList] = useState("");
   const [isLoading, setIsLoading] = useState(true); // Start with isLoading set to true
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  const showName = localStorage.getItem("clickedPopularShowsName");
-  const showID = localStorage.getItem("clickedPopularShowsID");
+  const showName = localStorage.getItem("clickedTopRatedShowName");
+  const showID = localStorage.getItem("clickedTopRatedShowID");
 
   const auth = getAuth();
 
@@ -167,124 +170,11 @@ const TrendingShowDetails = () => {
           )}
         </div>
       </div>
-      <div className="item_comment_section">
-        <PopularShowCommentSection />
+      <div>
+        <TopRatedShowComment />
       </div>
     </>
   );
 };
 
-export default TrendingShowDetails;
-
-/*
----------------------------------------------------------------------------------------------------------
-SAMPLE DATA FROM 1st API
-
-{
-  "page": 1,
-  "results": [
-    {
-      "adult": false,
-      "backdrop_path": "/5SEEBS5qXgL5rgivTiAROy1Qt2q.jpg",
-      "genre_ids": [
-        35,
-        18
-      ],
-      "id": 81356,
-      "origin_country": [
-        "GB"
-      ],
-      "original_language": "en",
-      "original_name": "Sex Education",
-      "overview": "Inexperienced Otis channels his sex therapist mom when he teams up with rebellious Maeve to set up an underground sex therapy clinic at school.",
-      "popularity": 702.187,
-      "poster_path": "/zn6VNUOHGWKvSGRL6KiMtAe9ELy.jpg",
-      "first_air_date": "2019-01-11",
-      "name": "Sex Education",
-      "vote_average": 8.299,
-      "vote_count": 6688
-      ------------------------------------------------------------------------------------------------------
-    }*/
-
-/*
-------------------------------------------------------------------------------------------------------------
-SAMPLE DATA FROM 2nd API 
-{
-  "id": 30984,
-  "results": [
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "Bleach - Opening 16 | Scar",
-      "key": "mjeR7vUrDvM",
-      "site": "YouTube",
-      "size": 1080,
-      "type": "Opening Credits",
-      "official": true,
-      "published_at": "2022-10-17T15:49:36.000Z",
-      "id": "634ea2a3389da10079e657a5"
-    },
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "Ichigo vs Aizen English Dub [2160p] (60FPS)",
-      "key": "IIw60tE6oDw",
-      "site": "YouTube",
-      "size": 2160,
-      "type": "Clip",
-      "official": false,
-      "published_at": "2022-04-30T13:09:44.000Z",
-      "id": "64ab5003e24b930100c66de9"
-    },
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "All Bleach Openings [Subtitled]",
-      "key": "ofvaakyqiF4",
-      "site": "YouTube",
-      "size": 1080,
-      "type": "Featurette",
-      "official": true,
-      "published_at": "2019-02-16T18:00:08.000Z",
-      "id": "6320218567dcc9007afb67d7"
-    },
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "Bleach - Opening 15 | Harukaze",
-      "key": "E-ejE--Q3UE",
-      "site": "YouTube",
-      "size": 1080,
-      "type": "Opening Credits",
-      "official": true,
-      "published_at": "2019-02-13T18:00:00.000Z",
-      "id": "61b030421684f7001cc60de7"
-    },
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "Bleach - Opening 2 | D-tecnoLife",
-      "key": "oeqvhwjYBws",
-      "site": "YouTube",
-      "size": 1080,
-      "type": "Opening Credits",
-      "official": true,
-      "published_at": "2019-01-05T18:00:05.000Z",
-      "id": "5fe19e1c2b2108003fe8aaf2"
-    },
-    {
-      "iso_639_1": "en",
-      "iso_3166_1": "US",
-      "name": "BLEACH Set 1 Blu-ray - Official Anime Trailer - VIZ Media",
-      "key": "0c4IoCA5fY0",
-      "site": "YouTube",
-      "size": 1080,
-      "type": "Trailer",
-      "official": true,
-      "published_at": "2016-07-13T20:24:33.000Z",
-      "id": "5fe19e046ee3d7003fea14a9"
-    }
-  ]
-}
----------------------------------------------------------------------------------------------
-*/
+export default TopRatedShowsDetails;

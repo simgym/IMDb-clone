@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { set, ref, getDatabase } from "firebase/database";
+
+import { Link, useNavigate } from "react-router-dom";
+
 import "./SearchDropdownMenu.css";
 
 const DropdownMenu = ({ items, onSelect }) => {
@@ -34,10 +34,10 @@ const DropdownMenu = ({ items, onSelect }) => {
 const SearchDropdownMenu = ({ toggleMenu }) => {
   const searchItem = localStorage.getItem("searchedItm");
 
+  const navigate = useNavigate();
+
   const [error, setError] = useState(null);
   const [searchList, setSearchList] = useState([]);
-
-  const db = getDatabase();
 
   useEffect(() => {
     const data = async () => {
@@ -68,16 +68,11 @@ const SearchDropdownMenu = ({ toggleMenu }) => {
   }, [searchItem]);
 
   const handleSelect = (id, name) => {
-    // try {
-    //   const searchIdRef = ref(db, `IMDbData/searchId/${id}/`);
-    //   await set(searchIdRef, id);
-    // } catch (error) {
-    //   console.error(error.code);
-    // }
     localStorage.setItem("searchedId", id);
     localStorage.setItem("searchedName", name);
+    navigate();
 
-    toggleMenu();
+    toggleMenu(`/movies/search/${id}`);
   };
 
   return (

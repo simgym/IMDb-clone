@@ -1,40 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { ref, get, push, getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import "./CommentSection.css";
 
-const CommentSection = () => {
-  const [commentsList, setCommentsList] = useState([]);
+const SearchedCommentSection = () => {
   const [newComment, setNewComment] = useState("");
+  const [searchedCommentsList, setSearchedCommentList] = useState([]);
 
-  const movieId = localStorage.getItem("clickedPopularMovieID");
+  const searchedItemId = localStorage.getItem("searchedId");
 
   const auth = getAuth();
 
   const fetchComments = async () => {
     const db = getDatabase();
-    const commentRef = ref(db, `IMDbData/comments/${movieId}`);
 
-    const commentSnapshot = await get(commentRef);
+    const searchedCommentRef = ref(
+      db,
+      `IMDbData/searchedComments/${searchedItemId}`
+    );
 
-    const comments = Object.values(commentSnapshot.val() || {});
+    const searchedCommentSnapshot = await get(searchedCommentRef);
 
-    setCommentsList(comments);
+    const searchedComments = Object.values(searchedCommentSnapshot.val() || {});
+
+    setSearchedCommentList(searchedComments);
   };
 
   useEffect(() => {
     fetchComments();
-  }, [auth, movieId]);
+  }, [auth, searchedItemId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (auth.currentUser) {
       const db = getDatabase();
-      const newCommentsRef = ref(db, `IMDbData/comments/${movieId}/`);
+
+      const newSearchedItemCommentRef = ref(
+        db,
+        `IMDbData/searchedComments/${searchedItemId}/`
+      );
 
       // Push the new comment to the database
-      await push(newCommentsRef, newComment);
+
+      await push(newSearchedItemCommentRef, newComment);
 
       // Clear the input field
       setNewComment("");
@@ -47,7 +55,7 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="comment_section">
+    <div>
       <h1>Comment Section</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -59,7 +67,7 @@ const CommentSection = () => {
         <button type="submit">Submit</button>
       </form>
       <ul>
-        {commentsList.map((comment, index) => (
+        {searchedCommentsList.map((comment, index) => (
           <li key={index}>{comment}</li>
         ))}
       </ul>
@@ -67,4 +75,4 @@ const CommentSection = () => {
   );
 };
 
-export default CommentSection;
+export default SearchedCommentSection;

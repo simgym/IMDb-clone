@@ -1,0 +1,49 @@
+.backdrop {
+  max-width: 100%;
+}
+
+.celeb_details {
+  list-style: none;
+  padding: 0;
+}
+
+.celeb_details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.celeb_details img {
+  height: 45%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-left: 200px;
+}
+
+.details_box {
+  width: 45%;
+  border: 1px solid #fff;
+  padding: 10px;
+  margin-right: 100px;
+}
+.celeb_name {
+  text-align: center;
+}
+.celeb_movie_title {
+  color: #2cf7cb;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.celeb_details {
+  animation: scroll 250s linear infinite;
+  overflow: hidden;
+}

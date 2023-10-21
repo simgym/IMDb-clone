@@ -5,9 +5,9 @@ import "./PopularMoviesDetails.css"; // Import your CSS file
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import CommentSection from "../components/CommentSection";
+import TopRatedMovieComment from "../components/TopRatedMovieComments";
 
-const PopularMoviesDetails = () => {
+const TopRatedMoviesDetails = () => {
   const dispatch = useDispatch();
   const [posterDetails, setPosterDetails] = useState({});
   const [video, setVideo] = useState([]);
@@ -27,7 +27,7 @@ const PopularMoviesDetails = () => {
   const [originalLanguage, setOriginalLanguage] = useState("");
   const [title, setTitle] = useState("");
 
-  const IDNumber = localStorage.getItem("clickedPopularMovieID");
+  const IDNumber = localStorage.getItem("clickedTopRatedMovieID");
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
 
   // Name of API: Images
@@ -208,13 +208,13 @@ const PopularMoviesDetails = () => {
               <Link to="/signup">Sign up</Link>
             </div>
           )}
+          <div>
+            <TopRatedMovieComment />
+          </div>
         </div>
-      </div>
-      <div className="item_comment_section">
-        <CommentSection />
       </div>
     </>
   );
 };
 
-export default PopularMoviesDetails;
+export default TopRatedMoviesDetails;
