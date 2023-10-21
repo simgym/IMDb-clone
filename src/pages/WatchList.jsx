@@ -64,28 +64,26 @@ const WatchList = () => {
     };
 
     if (IDNumberList.length > 0) {
-      // Only run if IDNumberList is not empty
       fetchMovieDetails();
     }
-  }, [IDNumberList, apiKey]); // Dependencies are IDNumberList and apiKey
+  }, [IDNumberList, apiKey]);
 
   return (
     <>
-      <div className="watchlist_poster-container">
-        <div className="watchlist_detail_poster">
-          <ul>
-            {watchlistMoviePosterDetails.map((movieDetail, index) => (
-              <li key={index}>
-                {movieDetail.backdrop_path && (
-                  <img
-                    src={`https://image.tmdb.org/t/p/original${movieDetail.backdrop_path}`}
-                    alt="Backdrop"
-                  />
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div>
+        <ul className="horizontal-scroll">
+          {watchlistMoviePosterDetails.map((movieDetail, index) => (
+            <li key={index}>
+              {movieDetail.backdrop_path && (
+                <img
+                  src={`https://image.tmdb.org/t/p/original${movieDetail.backdrop_path}`}
+                  alt="Backdrop"
+                  style={{ width: "100%", maxWidth: "500px" }}
+                />
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

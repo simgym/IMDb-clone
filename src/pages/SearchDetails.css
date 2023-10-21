@@ -67,20 +67,20 @@
 
 .show_genres_title {
   margin-right: 5px;
-  color: yellow;
+  color: #2cf7cb;
 }
 
 .show_status {
   margin-right: 5px;
 }
 .show_status_title {
-  color: yellow;
+  color: #2cf7cb;
 }
 .show_status-yellow {
-  color: yellow;
+  color: #2cf7cb;
 }
 .show_language-yellow {
-  color: yellow;
+  color: #2cf7cb;
 }
 
 .show_genre-item {

@@ -18,13 +18,14 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1000;
 }
 .header h1 {
   cursor: pointer;
-  background-color: #f5c518;
+  background-color: #2cf7cb;
   border-radius: 5px;
   text-align: center;
-  color: #000;
+  color: #000000;
   padding: 8px 0px; /* top/bottom padding is 8px, left/right padding is 2px */
 
   margin-left: 40px;
@@ -54,7 +55,7 @@ body {
   padding-top: 1px;
   padding-bottom: 1px;
   background-color: #fff;
-  border: thin solid #f5c518;
+  border: thin solid #2cf7cb;
   width: 600px;
   border-radius: 5px;
   height: 36px;
@@ -65,7 +66,9 @@ body {
 .header nav ul.list li a {
   color: #fff;
 }
-
+.header nav ul.list li a:hover {
+  color: #2cf7cb;
+}
 .drawer {
   position: fixed;
   top: 0;
@@ -76,6 +79,7 @@ body {
   padding: 20px;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .drawer.open {
@@ -100,11 +104,17 @@ body {
   font-size: 24px;
   cursor: pointer;
   margin-bottom: 5px; /* Add margin to the bottom */
+  padding: 10px;
 }
 
 /* Add hover effect to the close button */
 .close-button:hover {
-  color: #f5c518;
+  color: #2cf7cb;
+  border: thin solid white;
+}
+.close-button:active {
+  color: #2cf7cb;
+  border: thin solid white;
 }
 
 /* MainNavigation.css */
@@ -163,13 +173,23 @@ body {
   background-color: #333;
   margin-top: 5px;
 }
+.open .movies-dropdown-button:hover,
+.open .tvshows-dropdown-button:hover {
+  color: #2cf7cb;
+
+  border: thin solid white;
+}
 .open .movies-dropdown-button.clicked,
 .open .tvshows-dropdown-button.clicked {
-  color: #f5c518; /* Apply yellow color when clicked */
+  color: #2cf7cb;
   background-color: #333;
 }
 
 /* Style the next menu item when open */
 .open + .menu-item {
   margin-top: 10px; /* Adjust the margin to create space for the dropdown */
+}
+
+.menu_button:hover {
+  border-color: #2cf7cb;
 }

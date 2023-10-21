@@ -1,11 +1,9 @@
-.comment_section form {
+.upcomingcomment_section form {
   display: flex;
   justify-content: space-between;
-  width: 50%;
-  margin-left: 25%;
 }
 
-.comment_section input[type="text"] {
+.upcomingcomment_section input[type="text"] {
   flex-grow: 1;
   margin-right: 10px;
   background-color: white;
@@ -13,27 +11,25 @@
   border-radius: 7px;
   color: black;
 }
-.comment_section input[type="text"]:hover {
+.upcomingcomment_section input[type="text"]:hover {
   background-color: rgb(202, 202, 202);
 }
-.comment_section button[type="submit"] {
+.upcomingcomment_section button[type="submit"] {
   color: black;
   background-color: #2cf7cb;
 }
-.comment_section button[type="submit"] {
+.upcomingcomment_section button[type="submit"] {
   background-color: #27dfb7;
   color: black;
   border: thin solid white;
 }
-
-.comment_section ul {
+.upcomingcomment_section ul {
   background-color: rgb(37, 37, 37);
   padding: 10px;
-  margin-left: 15%;
-  width: 70%;
+  width: 100%;
   list-style-type: none;
 }
-.comment_section ul li {
+.upcomingcomment_section ul li {
   border-bottom: thin solid white;
   margin-bottom: 10px;
   font-size: medium;

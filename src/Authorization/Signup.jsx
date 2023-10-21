@@ -91,10 +91,11 @@ const Signup = () => {
 
         <button type="submit">Submit</button>
       </form>
-      <div>
+
+      <div className="not_user">
         <p>Already a user? </p>
+        <Link to="/login">Login</Link>
       </div>
-      <Link to="/login">Login</Link>
     </>
   );
 };

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { ref, get, push, getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import "./CommentSection.css";
+import "./UpcomingComments.css";
 
-const CommentSection = () => {
+const UpcomingMoviesComments = () => {
   const [commentsList, setCommentsList] = useState([]);
   const [newComment, setNewComment] = useState("");
 
-  const movieId = localStorage.getItem("clickedPopularMovieID");
+  const upcomingId = localStorage.getItem("clickedUpcomingID");
 
   const auth = getAuth();
 
   const fetchComments = async () => {
     const db = getDatabase();
-    const commentRef = ref(db, `IMDbData/comments/${movieId}`);
+    const commentRef = ref(db, `IMDbData/upcomingcomments/${upcomingId}`);
 
     const commentSnapshot = await get(commentRef);
 
@@ -24,14 +24,17 @@ const CommentSection = () => {
 
   useEffect(() => {
     fetchComments();
-  }, [auth, movieId]);
+  }, [auth, upcomingId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (auth.currentUser) {
       const db = getDatabase();
-      const newCommentsRef = ref(db, `IMDbData/comments/${movieId}/`);
+      const newCommentsRef = ref(
+        db,
+        `IMDbData/upcomingcomments/${upcomingId}/`
+      );
 
       // Push the new comment to the database
       await push(newCommentsRef, newComment);
@@ -47,8 +50,8 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="comment_section">
-      <h1>Comment Section</h1>
+    <div className="upcomingcomment_section">
+      <h1 className="upcomingcomment_heading">Comment Section</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -67,4 +70,4 @@ const CommentSection = () => {
   );
 };
 
-export default CommentSection;
+export default UpcomingMoviesComments;

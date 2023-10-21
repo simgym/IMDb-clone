@@ -1,63 +1,60 @@
-/* HomePage.css */
-
-/* Style for the home page container */
 body {
-  min-width: 100%; /* Adjust the value as needed */
-  margin: 0; /* Reset default margin */
-  overflow-x: hidden; /* Hide horizontal overflow on the body */
-}
-
-.home-page {
-  position: relative; /* Add relative positioning to contain children */
+  min-width: 100%;
+  margin: 0;
   overflow-x: hidden;
 }
 
-/* Style for the section container */
-.section-container {
-  width: 80%; /* Set the width to be within viewport */
+.home-page {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto; /* Allows vertical scrolling */
+  margin-top: 250vh; /* Pushes the page down by 200% of the viewport height */
 }
 
-/* Style for the heading */
+.section-container {
+  width: 80%;
+}
+
 .popular {
-  position: sticky; /* Make the heading sticky */
-  top: 70px; /* Position it below the navigation bar */
-  background-color: #333; /* Add a background color */
-  color: white; /* Set the text color to white */
-  font-family: "Amazon Ember", sans-serif; /* Set the font family */
-  padding: 10px 20px; /* Add padding for spacing */
+  position: sticky;
+  top: 70px;
+  border: thin solid #2cf7cb;
+  color: white;
+  font-family: "Amazon Ember", sans-serif;
+  padding: 10px 20px;
   text-align: center;
   margin-left: 1500px;
   margin-bottom: 50px;
 }
 
 .popular_moviesHeading {
-  position: sticky; /* Make the heading sticky */
-  top: 110px; /* Position it below the Trending heading */
-  color: white; /* Set the text color to white */
-  font-family: "Amazon Ember", sans-serif; /* Set the font family */
-  padding: 10px 20px; /* Add padding for spacing */
+  position: sticky;
+  top: 110px;
+  color: white;
+  font-family: "Amazon Ember", sans-serif;
+  padding: 10px 20px;
   font-size: xx-large;
   text-align: center;
+  margin-left: -400px;
 }
 
 .popular_showsHeading {
-  position: sticky; /* Make the heading sticky */
-  top: 150px; /* Position it below the Popular component */
-  color: white; /* Set the text color to white */
-  font-family: "Amazon Ember", sans-serif; /* Set the font family */
-  padding: 10px 20px; /* Add padding for spacing */
+  position: sticky;
+  top: 150px;
+  color: white;
+  font-family: "Amazon Ember", sans-serif;
+  padding: 10px 20px;
   font-size: xx-large;
   text-align: center;
+  margin-left: -400px;
 }
 
-/* Style for the scroll container */
 .scroll-container {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  overflow-y: hidden; /* Disable vertical scrolling */
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-/* Style for the content container */
 .content-container {
-  display: inline-block; /* Ensure it doesn't stretch to full width */
-  max-width: 100%;
+  display: inline-block;
+  max-width: 36.4%;
 }
