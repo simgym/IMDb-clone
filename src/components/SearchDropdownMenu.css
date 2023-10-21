@@ -10,7 +10,6 @@
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
   transform: translate(-50%, -50%);
-  margin-top: 20px;
 }
 
 .items:hover {

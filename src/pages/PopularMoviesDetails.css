@@ -8,7 +8,6 @@
   text-align: left;
   margin-left: 225px;
   margin-bottom: 40px;
-  margin-top: 35vh;
 }
 
 .poster-container {
@@ -68,20 +67,20 @@
 
 .genres_title {
   margin-right: 5px;
-  color: #2cf7cb;
+  color: yellow;
 }
 
 .movie_status {
   margin-right: 5px;
 }
 .movie_status_title {
-  color: #2cf7cb;
+  color: yellow;
 }
 .movie_status-yellow {
-  color: #2cf7cb;
+  color: yellow;
 }
 .movie_language-yellow {
-  color: #2cf7cb;
+  color: yellow;
 }
 
 .genre-item {
@@ -104,7 +103,6 @@
   max-height: 400px;
   overflow-y: auto;
   justify-content: center;
-  margin-left: 10px;
 }
 
 .video_container li {
@@ -112,8 +110,5 @@
   margin-bottom: 10px;
 }
 .watchlist_error {
-  color: #2cf7cb;
-}
-.item_comment_section {
-  text-align: center;
+  color: yellow;
 }

@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth";
-import { getDatabase, ref, push, get } from "firebase/database";
-import PopularShowCommentSection from "../components/PopularShowsCommentSection";
 import "./TrendingShowsDetails.css";
 
 const TrendingShowDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});
   const [showVideosList, setShowVideosList] = useState("");
   const [isLoading, setIsLoading] = useState(true); // Start with isLoading set to true
-  const [watchlistMessage, setWatchlistMessage] = useState("");
 
   const showName = localStorage.getItem("clickedPopularShowsName");
   const showID = localStorage.getItem("clickedPopularShowsID");
-
-  const auth = getAuth();
 
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
   // API for getting show data like overview , poster , language , date,country
@@ -73,30 +67,6 @@ const TrendingShowDetails = () => {
     showVideos();
   }, [showID, apiKey]);
 
-  //storing IDNumber in database
-  const watchlistHandler = async () => {
-    if (!auth.currentUser) {
-      setWatchlistMessage("Create an account to access watchlist");
-
-      setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
-      }, 3000);
-
-      return;
-    }
-    const db = getDatabase();
-    const idRef = ref(db, `IMDbData/${auth.currentUser.uid}/idNumber/`);
-
-    // Get the current data
-    const snapshot = await get(idRef);
-
-    // Check if the IDNumber already exists
-    if (!snapshot.val() || !Object.values(snapshot.val()).includes(showID)) {
-      // If it doesn't exist, push the new IDNumber
-      await push(idRef, showID);
-    }
-  };
-
   if (isLoading) {
     return "Loading..."; // Show a loading message while fetching data
   }
@@ -116,7 +86,6 @@ const TrendingShowDetails = () => {
               />
             )}
             <p className="show_tagline">{`Release Date : ${showDetailsObj?.first_air_date}`}</p>
-            <button onClick={watchlistHandler}>+ watchlist</button>
           </div>
         </div>
 
@@ -159,16 +128,7 @@ const TrendingShowDetails = () => {
               ))}
             </ul>
           )}
-          {watchlistMessage && (
-            <div>
-              <p className="watchlist_error">{watchlistMessage}</p>
-              <Link to="/signup">Sign up</Link>
-            </div>
-          )}
         </div>
-      </div>
-      <div className="item_comment_section">
-        <PopularShowCommentSection />
       </div>
     </>
   );

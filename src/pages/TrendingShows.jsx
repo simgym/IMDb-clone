@@ -5,14 +5,11 @@ import "./TrendingShows.css";
 
 const TrendingShows = () => {
   const [showList, setShowList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   //API to get TV shows ID & poster
   useEffect(() => {
     const shows = async () => {
       try {
-        setIsLoading(true);
-
         const response = await fetch(
           "https://api.themoviedb.org/3/trending/tv/day?language=en-US&api_key=e445b44c41f808c68cbd39eecc915331",
           {
@@ -30,42 +27,36 @@ const TrendingShows = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
-
-      setIsLoading(false);
     };
     shows();
   }, []);
 
   return (
     <>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <ul className="shows_horizontal-scroll">
-            {showList.map((item) => {
-              return (
-                <Link to={`/shows/${item.name}`} key={item.id}>
-                  <li>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                      alt={item.name}
-                      onClick={() => {
-                        console.log("Image clicked"); // Add this line for debugging
-                        localStorage.setItem(
-                          "clickedPopularShowsName",
-                          item.name
-                        );
-                        localStorage.setItem("clickedPopularShowsID", item.id);
-                      }}
-                    />
-                  </li>
-                </Link>
-              );
-            })}
-          </ul>
-        </div>
-      )}
+      <div>
+        <ul className="shows_horizontal-scroll">
+          {showList.map((item) => {
+            return (
+              <Link to={`/shows/${item.name}`} key={item.id}>
+                <li>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+                    alt={item.name}
+                    onClick={() => {
+                      console.log("Image clicked"); // Add this line for debugging
+                      localStorage.setItem(
+                        "clickedPopularShowsName",
+                        item.name
+                      );
+                      localStorage.setItem("clickedPopularShowsID", item.id);
+                    }}
+                  />
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+      </div>
     </>
   );
 };

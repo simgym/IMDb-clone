@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ref, get, push, getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import "./CommentSection.css";
 
 const CommentSection = () => {
   const [commentsList, setCommentsList] = useState([]);
@@ -14,7 +13,6 @@ const CommentSection = () => {
   const fetchComments = async () => {
     const db = getDatabase();
     const commentRef = ref(db, `IMDbData/comments/${movieId}`);
-
     const commentSnapshot = await get(commentRef);
 
     const comments = Object.values(commentSnapshot.val() || {});
@@ -47,7 +45,7 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="comment_section">
+    <div>
       <h1>Comment Section</h1>
       <form onSubmit={handleSubmit}>
         <input

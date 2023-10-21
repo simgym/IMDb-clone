@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import SearchedCommentSection from "../components/searchedCommentSection";
 import "./ShowsSearchDetails.css";
 
 const ShowsSearchDetails = () => {
@@ -148,9 +147,6 @@ const ShowsSearchDetails = () => {
                   ))}
                 </ul>
               )}
-              <div>
-                <SearchedCommentSection />
-              </div>
             </div>
           </div>
         </main>

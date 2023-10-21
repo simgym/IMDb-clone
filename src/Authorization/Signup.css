@@ -1,15 +1,12 @@
 .signup_error {
   color: red;
-  text-align: center;
-  height: 20px;
 }
 .signup_form {
-  background-color: black;
+  background-color: grey;
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-radius: 10px;
-  border: thin solid #2cf7cb;
 }
 
 .signup_form div {
@@ -23,16 +20,4 @@
 
 .signup_form input {
   margin-bottom: 10px;
-}
-.signup_form button {
-  background-color: #2cf7cb;
-  color: black;
-}
-.signup_form button:hover {
-  background-color: #27dfb7;
-  color: black;
-  border: thin solid white;
-}
-.not_user {
-  text-align: center;
 }

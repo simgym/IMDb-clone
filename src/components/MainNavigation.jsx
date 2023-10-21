@@ -57,11 +57,9 @@ const MainNavigation = () => {
   return (
     <>
       <header className="header">
-        <button className="menu_button" onClick={toggleDrawerHandler}>
-          ☰
-        </button>
+        <button onClick={toggleDrawerHandler}>☰</button>
 
-        <h1 onClick={navigateHandler}>ADVi</h1>
+        <h1 onClick={navigateHandler}>IMDb</h1>
         <nav>
           <ul className="list">
             <li>

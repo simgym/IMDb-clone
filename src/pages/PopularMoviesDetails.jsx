@@ -208,10 +208,10 @@ const PopularMoviesDetails = () => {
               <Link to="/signup">Sign up</Link>
             </div>
           )}
+          <div>
+            <CommentSection />
+          </div>
         </div>
-      </div>
-      <div className="item_comment_section">
-        <CommentSection />
       </div>
     </>
   );
