@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SearchedCommentSection from "../components/searchedCommentSection";
+import SearchedCommentSection from "../components/SearchedCommentSection";
 import "./ShowsSearchDetails.css";
 
 const ShowsSearchDetails = () => {
