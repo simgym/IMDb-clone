@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
-import { getDatabase, ref, push, get } from "firebase/database";
+import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
-import { Link } from "react-router-dom";
-import TopRatedSimilarShows from "../components/TopRatedSimilarShows";
-import TopRatedShowComment from "../components/TopRatedShowComments";
+import { getDatabase, ref, push, get } from "firebase/database";
 
-const TopRatedShowsDetails = () => {
+const TrendingSimilarShowDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});
   const [showVideosList, setShowVideosList] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // Start with isLoading set to true
+  const [isLoading, setIsLoading] = useState(true);
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  const showName = localStorage.getItem("clickedTopRatedShowName");
-  const showID = localStorage.getItem("clickedTopRatedShowID");
+  const showName = localStorage.getItem("similartrendingshowName");
+  const showID = localStorage.getItem("similartrendingshowID");
 
   const auth = getAuth();
 
@@ -171,14 +165,8 @@ const TopRatedShowsDetails = () => {
           )}
         </div>
       </div>
-      <div>
-        <TopRatedShowComment />
-      </div>
-      <div>
-        <TopRatedSimilarShows />
-      </div>
     </>
   );
 };
 
-export default TopRatedShowsDetails;
+export default TrendingSimilarShowDetails;

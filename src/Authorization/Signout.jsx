@@ -1,5 +1,6 @@
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "./Signout.css";
 
 const auth = getAuth();
 
@@ -26,8 +27,10 @@ const Signout = () => {
     <>
       <div className="signout">
         <p> Are you sure?</p>
-        <button onClick={logoutHandler}>Yes , logout</button>
-        <button onClick={browsingHandler}>No,continue browsing</button>
+        <div>
+          <button onClick={logoutHandler}>Yes , logout</button>
+          <button onClick={browsingHandler}>No , continue browsing</button>
+        </div>
       </div>
     </>
   );

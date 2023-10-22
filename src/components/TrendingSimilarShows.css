@@ -1,0 +1,50 @@
+/* Style for each list item */
+ul.similar_horizontal-scroll li {
+  display: flex; /* Enable flex layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  flex-basis: 150%; /* Set initial size before distributing space */
+  margin-right: 50px; /* Add space to the right of each image */
+}
+
+/* Style for the movie poster image */
+ul.similar_horizontal-scroll li img {
+  width: 200%; /* Adjust to your preferred size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Container for the horizontal scroll */
+ul.similar_horizontal-scroll {
+  display: flex; /* Display items in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-left: -40px;
+}
+
+/* Optional: Add styling for scrollbars (customize as needed) */
+ul.similar_horizontal-scroll::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+ul.similar_horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+ul.similar_horizontal-scroll::before {
+  content: "";
+  display: block;
+  width: 10px; /* Adjust the width as needed to cover the scrollbar */
+  background: #0e0e0e; /* Match the background color of your list items */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Optional: Style the pseudo-element */
+ul.similar_horizontal-scroll::before:hover {
+  background-color: #555;
+}
+
+.more_like_this {
+  text-align: center;
+}

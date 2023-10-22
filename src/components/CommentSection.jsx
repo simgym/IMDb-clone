@@ -48,7 +48,7 @@ const CommentSection = () => {
 
   return (
     <div className="comment_section">
-      <h1>Comment Section</h1>
+      <h1 className="comment_heading">Comment Section</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ref, get, push, getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
+import "./SearchedCommentSection.css";
 
 const SearchedCommentSection = () => {
   const [newComment, setNewComment] = useState("");
@@ -55,8 +56,8 @@ const SearchedCommentSection = () => {
   };
 
   return (
-    <div>
-      <h1>Comment Section</h1>
+    <div className="searchedcommment_section">
+      <h1 className="searchedcommment_heading">Comment Section</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

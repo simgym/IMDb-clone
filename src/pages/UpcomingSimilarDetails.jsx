@@ -5,10 +5,10 @@ import "./PopularMoviesDetails.css"; // Import your CSS file
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import TopRatedMovieComment from "../components/TopRatedMovieComments";
-import TopRatedSimilarMovies from "../components/TopRatedSimilarMovies";
+import { useParams } from "react-router-dom";
 
-const TopRatedMoviesDetails = () => {
+const UpcomingSimilarDetails = () => {
+  const { similarID } = useParams();
   const dispatch = useDispatch();
   const [posterDetails, setPosterDetails] = useState({});
   const [video, setVideo] = useState([]);
@@ -28,7 +28,7 @@ const TopRatedMoviesDetails = () => {
   const [originalLanguage, setOriginalLanguage] = useState("");
   const [title, setTitle] = useState("");
 
-  const IDNumber = localStorage.getItem("clickedTopRatedMovieID");
+  const IDNumber = localStorage.getItem("upcomingsimilar");
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
 
   // Name of API: Images
@@ -61,7 +61,7 @@ const TopRatedMoviesDetails = () => {
     };
 
     itemPosters();
-  }, [IDNumber, apiKey]);
+  }, [IDNumber, apiKey, similarID]);
 
   // Name of API: Videos
   // To get the video
@@ -89,7 +89,7 @@ const TopRatedMoviesDetails = () => {
       }
     };
     itemVideos();
-  }, [apiKey, IDNumber]);
+  }, [apiKey, IDNumber, similarID]);
 
   // Name of API: Details
   // For overview, genres, release date, status, original language information
@@ -120,7 +120,7 @@ const TopRatedMoviesDetails = () => {
       }
     };
     movieDetails();
-  }, [IDNumber, apiKey]);
+  }, [IDNumber, apiKey, similarID]);
 
   //storing IDNumber in database
   const watchlistHandler = async () => {
@@ -211,14 +211,8 @@ const TopRatedMoviesDetails = () => {
           )}
         </div>
       </div>
-      <div>
-        <TopRatedMovieComment />
-      </div>
-      <div>
-        <TopRatedSimilarMovies />
-      </div>
     </>
   );
 };
 
-export default TopRatedMoviesDetails;
+export default UpcomingSimilarDetails;

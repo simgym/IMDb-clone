@@ -1,11 +1,11 @@
-.tmccomment_section form {
+.searchedcommment_section form {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin-left: 25%;
 }
 
-.tmccomment_section input[type="text"] {
+.searchedcommment_section input[type="text"] {
   flex-grow: 1;
   margin-right: 10px;
   background-color: white;
@@ -13,33 +13,33 @@
   border-radius: 7px;
   color: black;
 }
-.tmccomment_section input[type="text"]:hover {
+.searchedcommment_section input[type="text"]:hover {
   background-color: rgb(202, 202, 202);
 }
-
-.tmccomment_section button[type="submit"] {
+.searchedcommment_section button[type="submit"] {
+  color: black;
+  background-color: #2cf7cb;
+}
+.searchedcommment_section button[type="submit"] {
   background-color: #27dfb7;
   color: black;
   border: thin solid white;
 }
-.tmccomment_section button[type="submit"]:hover {
-  background-color: #22c5a2;
-}
 
-.tmccomment_section ul {
+.searchedcommment_section ul {
   background-color: rgb(37, 37, 37);
   padding: 10px;
   margin-left: 15%;
   width: 70%;
   list-style-type: none;
 }
-.tmccomment_section ul li {
+.searchedcommment_section ul li {
   border-bottom: thin solid white;
   margin-bottom: 10px;
   font-size: medium;
   text-align: left;
   padding-left: 0%;
 }
-.tmccomment_heading {
+.searchedcommment_heading {
   text-align: center;
 }

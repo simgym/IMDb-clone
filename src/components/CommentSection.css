@@ -16,14 +16,14 @@
 .comment_section input[type="text"]:hover {
   background-color: rgb(202, 202, 202);
 }
-.comment_section button[type="submit"] {
-  color: black;
-  background-color: #2cf7cb;
-}
+
 .comment_section button[type="submit"] {
   background-color: #27dfb7;
   color: black;
   border: thin solid white;
+}
+.comment_section button[type="submit"]:hover {
+  background-color: #22c5a2;
 }
 
 .comment_section ul {

@@ -1,0 +1,31 @@
+.signout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2cf7cb;
+  width: 500px;
+  height: 200px;
+}
+
+.signout p {
+  margin-bottom: 20px;
+  font-size: larger;
+}
+
+.signout button {
+  margin: 10px;
+  width: 120%;
+  background-color: #2cf7cb;
+  color: black;
+}
+
+.signout button:hover {
+  border: 1px solid white;
+  background-color: #27e0b8;
+}
+
+.signout div {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import SearchedCommentSection from "../components/searchedCommentSection";
+import SearchedCommentSection from "../components/SearchedCommentSection";
+import SimilarSearchedShow from "../components/SimilarSearchedShow";
 import "./ShowsSearchDetails.css";
 
 const ShowsSearchDetails = () => {
@@ -148,10 +149,13 @@ const ShowsSearchDetails = () => {
                   ))}
                 </ul>
               )}
-              <div>
-                <SearchedCommentSection />
-              </div>
             </div>
+          </div>
+          <div>
+            <SearchedCommentSection />
+          </div>
+          <div>
+            <SimilarSearchedShow />
           </div>
         </main>
       )}

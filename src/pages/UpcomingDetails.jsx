@@ -6,6 +6,7 @@ import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import UpcomingMoviesComments from "../components/UpcomingComments";
+import UpcomingSimilar from "../components/UpcomingSimilar";
 
 const UpcomingDetails = () => {
   const dispatch = useDispatch();
@@ -208,10 +209,13 @@ const UpcomingDetails = () => {
               <Link to="/signup">Sign up</Link>
             </div>
           )}
-          <div>
-            <UpcomingMoviesComments />
-          </div>
         </div>
+      </div>
+      <div>
+        <UpcomingMoviesComments />
+      </div>
+      <div>
+        <UpcomingSimilar />
       </div>
     </>
   );

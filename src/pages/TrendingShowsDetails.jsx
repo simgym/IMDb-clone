@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, push, get } from "firebase/database";
 import PopularShowCommentSection from "../components/PopularShowsCommentSection";
+import TrendingSimilarShows from "../components/TrendingSimilarShows";
 import "./TrendingShowsDetails.css";
 
 const TrendingShowDetails = () => {
@@ -167,8 +168,12 @@ const TrendingShowDetails = () => {
           )}
         </div>
       </div>
+
       <div className="item_comment_section">
         <PopularShowCommentSection />
+      </div>
+      <div>
+        <TrendingSimilarShows />
       </div>
     </>
   );

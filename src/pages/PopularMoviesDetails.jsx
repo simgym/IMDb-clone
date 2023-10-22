@@ -5,6 +5,7 @@ import "./PopularMoviesDetails.css"; // Import your CSS file
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
+import TrendingSimilarMovies from "../components/TrendingSimilarMovies";
 import CommentSection from "../components/CommentSection";
 
 const PopularMoviesDetails = () => {
@@ -212,6 +213,9 @@ const PopularMoviesDetails = () => {
       </div>
       <div className="item_comment_section">
         <CommentSection />
+      </div>
+      <div>
+        <TrendingSimilarMovies />
       </div>
     </>
   );
