@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./MovieSearchDetails.css";
 
-import SearchedCommentSection from "../components/searchedCommentSection";
+import SearchedCommentSection from "../components/SearchedCommentSection";
 
 const MovieSearchDetails = () => {
   const IDNumber = localStorage.getItem("searchedId");
