@@ -12,7 +12,7 @@ import SearchDetails from "./pages/SearchDetails";
 import UpcomingDetails from "./pages/UpcomingDetails";
 import TopRatedMoviesDetails from "./pages/TopRatedMoviesDetails";
 import TopRatedShowsDetails from "./pages/TopRatedShowsDetails";
-import CelebDetails from "./pages/celebDetails";
+import CelebDetails from "./pages/CelebDetails";
 
 /*------------------------------------------------------------------------ 
                               STEPS LEFT                                                              
