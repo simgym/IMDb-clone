@@ -12,6 +12,7 @@ import SearchDetails from "./pages/SearchDetails";
 import UpcomingDetails from "./pages/UpcomingDetails";
 import TopRatedMoviesDetails from "./pages/TopRatedMoviesDetails";
 import TopRatedShowsDetails from "./pages/TopRatedShowsDetails";
+
 import TrendingSimilarShowDetails from "./pages/TrendingSimilarShowDetails";
 import TrendingSimilarMovieDetails from "./pages/TrendingSimilarMovieDetails";
 import UpcomingSimilarDetails from "./pages/UpcomingSimilarDetails";
@@ -19,6 +20,7 @@ import TopRatedSimilarMovieDetails from "./pages/TopRatedSimilarMovieDetails";
 import TopRatedSimilarShowDetails from "./pages/TopRatedSimilarShowDetails";
 import SimilarSearchedMovieDetails from "./pages/SimilarSearchedMovieDetails";
 import SimilarSearchedShowDetails from "./pages/SimilarSearchedShowDetails";
+
 import CelebDetails from "./pages/CelebDetails";
 
 /*------------------------------------------------------------------------ 

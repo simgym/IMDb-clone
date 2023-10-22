@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import SearchedCommentSection from "../components/SearchedCommentSection";
+
 import SimilarSearchedShow from "../components/SimilarSearchedShow";
+
 import "./ShowsSearchDetails.css";
 
 const ShowsSearchDetails = () => {
