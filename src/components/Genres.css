@@ -1,0 +1,12 @@
+.genres_list {
+  background-color: rgb(66, 66, 66);
+}
+.genres_list a {
+  color: #2cf7cb;
+}
+.genres_list a:hover {
+  color: white;
+}
+.genres_list ul {
+  list-style: none;
+}

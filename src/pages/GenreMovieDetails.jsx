@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const SimilarSearchedMovieDetails = () => {
+const GenreMovieDetails = () => {
   const { similarID } = useParams();
   const dispatch = useDispatch();
   const [posterDetails, setPosterDetails] = useState({});
@@ -28,7 +28,7 @@ const SimilarSearchedMovieDetails = () => {
   const [originalLanguage, setOriginalLanguage] = useState("");
   const [title, setTitle] = useState("");
 
-  const IDNumber = localStorage.getItem("similarsearchedmovieID");
+  const IDNumber = localStorage.getItem("genremovieID");
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
 
   // Name of API: Images
@@ -134,7 +134,10 @@ const SimilarSearchedMovieDetails = () => {
       return;
     }
     const db = getDatabase();
-    const idRef = ref(db, `IMDbData/${auth.currentUser.uid}/idNumber/`);
+    const idRef = ref(
+      db,
+      `IMDbData/watchlistmovies/${auth.currentUser.uid}/idNumber/`
+    );
 
     // Get the current data
     const snapshot = await get(idRef);
@@ -174,8 +177,8 @@ const SimilarSearchedMovieDetails = () => {
           <div className="movie_genres_details genres-list">
             <p className="genres_title">Genres:</p>
             {genresList.map((item, index) => (
-              <div className="genre-item">
-                <li key={index}>{`${item.name} `}</li>
+              <div className="genre-item" key={index}>
+                <li>{`${item.name} `}</li>
               </div>
             ))}
             <p className="movie_status">
@@ -215,4 +218,4 @@ const SimilarSearchedMovieDetails = () => {
   );
 };
 
-export default SimilarSearchedMovieDetails;
+export default GenreMovieDetails;

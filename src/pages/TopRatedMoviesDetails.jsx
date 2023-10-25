@@ -27,6 +27,7 @@ const TopRatedMoviesDetails = () => {
   const [tagline, setTagline] = useState("");
   const [originalLanguage, setOriginalLanguage] = useState("");
   const [title, setTitle] = useState("");
+  const [releaseDate, setReleaseDate] = useState("");
 
   const IDNumber = localStorage.getItem("clickedTopRatedMovieID");
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
@@ -114,6 +115,7 @@ const TopRatedMoviesDetails = () => {
           setTagline(result.tagline);
           setOriginalLanguage(result.original_language);
           setTitle(result.original_title);
+          setReleaseDate(result.release_date);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -134,7 +136,10 @@ const TopRatedMoviesDetails = () => {
       return;
     }
     const db = getDatabase();
-    const idRef = ref(db, `IMDbData/${auth.currentUser.uid}/idNumber/`);
+    const idRef = ref(
+      db,
+      `IMDbData/watchlistmovies/${auth.currentUser.uid}/idNumber/`
+    );
 
     // Get the current data
     const snapshot = await get(idRef);
@@ -163,6 +168,7 @@ const TopRatedMoviesDetails = () => {
               />
             )}
             <p className="movie_tagline">{tagline}</p>
+            <p className="movie_tagline">{`Release Date : ${releaseDate}`}</p>
             <button onClick={watchlistHandler}>+ watchlist</button>
           </div>
         </div>

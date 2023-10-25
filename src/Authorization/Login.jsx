@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
@@ -8,6 +9,8 @@ const Login = () => {
   const [loginPassword, setLoginPassword] = useState(0);
   const [error, setError] = useState(null);
   const [displayError, setDisplayError] = useState("");
+
+  const navigate = useNavigate();
 
   //Initializing firebase auth
   const auth = getAuth();
@@ -25,6 +28,9 @@ const Login = () => {
       );
       //user signed in
       const user = userCredential.user;
+
+      navigate("/");
+
       console.log(user);
     } catch (error) {
       console.error(error.code);

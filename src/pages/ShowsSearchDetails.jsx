@@ -2,13 +2,18 @@ import { useState, useEffect } from "react";
 import SearchedCommentSection from "../components/SearchedCommentSection";
 
 import SimilarSearchedShow from "../components/SimilarSearchedShow";
+import { getAuth } from "firebase/auth";
+import { getDatabase, ref, push, get } from "firebase/database";
 
 import "./ShowsSearchDetails.css";
+import WatchList from "./WatchList";
 
 const ShowsSearchDetails = () => {
   const showName = localStorage.getItem("searchedName");
   const searchResult = localStorage.getItem("searchedItm");
   const IDNumber = localStorage.getItem("searchedId");
+
+  const [watchlistMessage, setWatchlistMessage] = useState("");
 
   //Show Details
   const [showDetailsObj, setShowDetailsObj] = useState({});
@@ -22,6 +27,8 @@ const ShowsSearchDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const apiKey = "e445b44c41f808c68cbd39eecc915331";
+
+  const auth = getAuth();
 
   // API for getting show data like overview , poster , language , date,country
   useEffect(() => {
@@ -91,6 +98,34 @@ const ShowsSearchDetails = () => {
     showVideos();
   }, [IDNumber, apiKey]);
 
+  //storing showName in database
+  const watchlistHandler = async () => {
+    if (!auth.currentUser) {
+      setWatchlistMessage("Create an account to access watchlist");
+
+      setTimeout(() => {
+        setWatchlistMessage(""); // This will clear the message after 2 seconds
+      }, 3000);
+
+      return;
+    }
+    const db = getDatabase();
+    const idRef = ref(
+      db,
+      `IMDbData/watchlistshows/${auth.currentUser.uid}/idNumber/`
+    );
+
+    // Get the current data
+    const snapshot = await get(idRef);
+
+    // Check if the IDNumber already exists
+    if (!snapshot.val() || !Object.values(snapshot.val()).includes(IDNumber)) {
+      // If it doesn't exist, push the new IDNumber
+
+      await push(idRef, showName);
+    }
+  };
+
   return (
     <>
       {isLoading ? (
@@ -111,6 +146,7 @@ const ShowsSearchDetails = () => {
                   />
                 )}
                 <p className="show_tagline">{`Release Date : ${showDate}`}</p>
+                <button onClick={watchlistHandler}>+ Watchlist</button>
               </div>
             </div>
 
@@ -150,6 +186,12 @@ const ShowsSearchDetails = () => {
                     </li>
                   ))}
                 </ul>
+              )}
+              {watchlistMessage && (
+                <div>
+                  <p className="watchlist_error">{watchlistMessage}</p>
+                  <Link to="/signup">Sign up</Link>
+                </div>
               )}
             </div>
           </div>

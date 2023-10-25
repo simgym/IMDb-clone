@@ -1,0 +1,19 @@
+.watchlist_horizontal-scroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.watchlist_horizontal-scroll li {
+  list-style: none;
+  text-align: center;
+}
+
+.watchlist_horizontal-scroll img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

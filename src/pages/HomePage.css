@@ -7,8 +7,8 @@ body {
 .home-page {
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto; /* Allows vertical scrolling */
-  margin-top: 250vh; /* Pushes the page down by 200% of the viewport height */
+  overflow-y: auto;
+  margin-top: 250vh;
 }
 
 .section-container {
@@ -57,4 +57,69 @@ body {
 .content-container {
   display: inline-block;
   max-width: 36.4%;
+}
+
+@media only screen and (max-width: 390px) {
+  body {
+    min-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .home-page {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 430vh;
+  }
+
+  .section-container {
+    width: 100%;
+  }
+
+  .popular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 70px;
+    border: thin solid #2cf7cb;
+    color: white;
+    font-family: "Amazon Ember", sans-serif;
+    padding: 10px 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+
+  .popular_moviesHeading,
+  .popular_showsHeading {
+    position: sticky;
+    color: white;
+    font-family: "Amazon Ember", sans-serif;
+    padding: 10px 20px;
+    font-size: xx-large;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .popular_moviesHeading {
+    top: 110px;
+  }
+
+  .popular_showsHeading {
+    top: 150px;
+  }
+
+  .scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .content-container {
+    display: inline-block;
+    max-width: 100%;
+  }
 }

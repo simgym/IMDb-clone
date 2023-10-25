@@ -1,7 +1,7 @@
 .show-details-container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping to the next line */
-  justify-content: center; /* Center the content horizontally */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .show_title {
@@ -12,7 +12,6 @@
 }
 
 .show_poster-container {
-  /* Update styling for the poster container */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +23,7 @@
   border-radius: 3px;
   overflow: hidden;
   margin-right: 20px;
-  margin-top: 0; /* Remove the top margin */
+  margin-top: 0;
 }
 
 .show_detail_poster img {
@@ -50,14 +49,14 @@
 .show_overview {
   flex: 1;
   font-size: 16px;
-  margin-top: 20px; /* Add margin to separate it from the details below */
+  margin-top: 20px;
 }
 
 .show_genres_details {
   font-size: 14px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Allow wrapping if necessary */
+  flex-wrap: wrap;
 }
 
 .show_genres-list {

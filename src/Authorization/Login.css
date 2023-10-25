@@ -1,5 +1,6 @@
 .login_error {
   color: red;
+  text-align: center;
 }
 .login_form {
   background-color: rgb(0, 0, 0);

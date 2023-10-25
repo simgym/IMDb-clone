@@ -8,7 +8,7 @@ import "./TrendingShowsDetails.css";
 const TrendingShowDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});
   const [showVideosList, setShowVideosList] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // Start with isLoading set to true
+  const [isLoading, setIsLoading] = useState(true);
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
   const showName = localStorage.getItem("clickedPopularShowsName");
@@ -74,7 +74,7 @@ const TrendingShowDetails = () => {
     showVideos();
   }, [showID, apiKey]);
 
-  //storing IDNumber in database
+  //storing showName in database
   const watchlistHandler = async () => {
     if (!auth.currentUser) {
       setWatchlistMessage("Create an account to access watchlist");
@@ -86,7 +86,10 @@ const TrendingShowDetails = () => {
       return;
     }
     const db = getDatabase();
-    const idRef = ref(db, `IMDbData/${auth.currentUser.uid}/idNumber/`);
+    const idRef = ref(
+      db,
+      `IMDbData/watchlistshows/${auth.currentUser.uid}/idNumber/`
+    );
 
     // Get the current data
     const snapshot = await get(idRef);
@@ -94,7 +97,8 @@ const TrendingShowDetails = () => {
     // Check if the IDNumber already exists
     if (!snapshot.val() || !Object.values(snapshot.val()).includes(showID)) {
       // If it doesn't exist, push the new IDNumber
-      await push(idRef, showID);
+
+      await push(idRef, showName);
     }
   };
 

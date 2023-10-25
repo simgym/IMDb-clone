@@ -1,39 +1,37 @@
-/* external-styles.css */
-
-/* Container for the horizontal scroll */
 ul.shows_horizontal-scroll {
   list-style: none;
   display: inline-flex;
-  padding: 0; /* Remove default padding */
+  padding: 0;
   margin-left: 2300px;
-  white-space: nowrap; /* Prevent wrapping to the next line */
-  gap: 0px; /* Add some spacing between items */
-  align-items: center; /* Vertically align items in the center */
-  width: 100%; /* Set a fixed width for the container */
-  overflow: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x proximity; /* Snap scrolling to items */
-  padding-inline-start: 16px; /* Add some padding to the start of the container */
+  white-space: nowrap;
+  gap: 0px;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+  scroll-snap-type: x proximity;
+  padding-inline-start: 16px;
 }
 
-/* Style for each list item */
 ul.shows_horizontal-scroll li {
-  flex: 0 0 auto; /* Allow items to shrink and grow as needed */
-  text-align: center; /* Center the content */
-  min-width: 200px; /* Set a minimum width for each item */
-  padding: 5px; /* Add some padding around each item */
-  background-color: #0e0e0e; /* Add a background color for clarity */
-  border-radius: 8px; /* Add some border-radius for rounded corners */
-  margin: 0px; /* Remove default margin */
-  scroll-snap-align: start; /* Snap to the start of each item */
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 200px;
+  padding: 5px;
+  background-color: #0e0e0e;
+  border-radius: 8px;
+  margin: 0px;
+  scroll-snap-align: start;
+}
+ul.shows_horizontal-scroll li:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Style for the movie poster image */
 ul.shows_horizontal-scroll li img {
-  max-width: 100%; /* Allow posters to scale down if needed */
+  max-width: 100%;
   height: auto;
 }
 
-/* Optional: Add styling for scrollbars (customize as needed) */
 ul.shows_horizontal-scroll::-webkit-scrollbar {
   width: 0;
   background: transparent;

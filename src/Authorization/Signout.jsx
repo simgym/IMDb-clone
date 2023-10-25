@@ -28,8 +28,8 @@ const Signout = () => {
       <div className="signout">
         <p> Are you sure?</p>
         <div>
-          <button onClick={logoutHandler}>Yes , logout</button>
-          <button onClick={browsingHandler}>No , continue browsing</button>
+          <button onClick={logoutHandler}>logout</button>
+          <button onClick={browsingHandler}>continue browsing</button>
         </div>
       </div>
     </>

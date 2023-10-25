@@ -27,7 +27,7 @@
 }
 
 .content {
-  max-height: 150px; /* Adjust the value as needed */
+  max-height: 150px;
   overflow-y: auto;
 }
 

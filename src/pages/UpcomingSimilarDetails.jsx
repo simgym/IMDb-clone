@@ -6,6 +6,7 @@ import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import "./UpcomingSimilarDetails.css";
 
 const UpcomingSimilarDetails = () => {
   const { similarID } = useParams();

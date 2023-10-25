@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, push, get } from "firebase/database";
+import "./TrendingSimilarShowDetails.css";
 
 const TrendingSimilarShowDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});

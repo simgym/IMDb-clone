@@ -5,18 +5,20 @@ import { useDispatch } from "react-redux";
 import { searchAction } from "../store/searchStorage";
 import { getAuth } from "firebase/auth";
 import SearchDropdownMenu from "./SearchDropdownMenu";
+import Genres from "./Genres";
 
 const MainNavigation = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const [isMoviesOpen, setIsMoviesOpen] = useState(false);
-  const [isTvShowsOpen, setIsTvShowsOpen] = useState(false);
-
   const [searchValue, setSearchValue] = useState("");
 
   const [showMenu, setShowMenu] = useState(false);
+
+  const [message, setMessage] = useState("");
+
+  const [openGenreList, setOpenGenreList] = useState(false);
 
   const auth = getAuth();
 
@@ -28,16 +30,6 @@ const MainNavigation = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
-  const toggleMoviesHandler = () => {
-    setIsMoviesOpen((prevState) => !prevState);
-    const dropdownButton = document.querySelector(".movies-dropdown-button");
-    dropdownButton.classList.toggle("clicked");
-  };
-  const toggleTvShowsHandler = () => {
-    setIsTvShowsOpen((prevState) => !prevState);
-    const dropdownButton = document.querySelector(".tvshows-dropdown-button");
-    dropdownButton.classList.toggle("clicked");
-  };
   // const searchHandler = (event) => {
   //   dispatch(searchAction.search(event.target.value));
   // };
@@ -112,41 +104,26 @@ const MainNavigation = () => {
                   WatchList
                 </NavLink>
               </li>
-            ) : undefined}
-
-            <li>
-              <button
-                className="movies-dropdown-button"
-                onClick={toggleMoviesHandler}
-              >
-                Movies
-              </button>
-              {isMoviesOpen ? (
-                <div className="dropdown-content">
-                  <NavLink to="/english">English</NavLink>
-                  <NavLink to="/hindi">Hindi</NavLink>
-                  <NavLink to="tamil">Tamil</NavLink>
-                </div>
-              ) : (
-                ""
-              )}
-            </li>
-            <li>
-              <button
-                className="tvshows-dropdown-button"
-                onClick={toggleTvShowsHandler}
-              >
-                TV Shows
-              </button>
-              {isTvShowsOpen ? (
-                <div className="dropdown-content">
-                  <NavLink to="/english">English</NavLink>
-                  <NavLink to="/hindi">Hindi</NavLink>
-                  <NavLink to="tamil">Tamil</NavLink>
-                </div>
-              ) : (
-                ""
-              )}
+            ) : (
+              <div>
+                <p
+                  onClick={() => {
+                    setMessage("sign in to access");
+                    setTimeout(() => setMessage(""), 2000);
+                  }}
+                >
+                  WatchList
+                </p>
+                <p className="watchlist_access_message">{message}</p>
+              </div>
+            )}
+            <li
+              onClick={() => {
+                setOpenGenreList((prevState) => !prevState);
+              }}
+            >
+              Genres
+              {openGenreList ? <Genres /> : undefined}
             </li>
           </ul>
         </nav>

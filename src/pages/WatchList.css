@@ -1,69 +1,8 @@
-/* HomePage.css */
-
-body {
-  min-width: 100%;
-  margin: 0;
-  overflow-x: hidden;
+.watchlist_container {
+  margin-top: 20vh;
 }
-
-.home-page {
-  position: relative;
-  overflow-x: hidden;
-}
-
-.section-container {
-  width: 80%;
-}
-
-.popular {
-  position: sticky;
-  top: 70px;
-  background-color: #333;
-  color: white;
-  font-family: "Amazon Ember", sans-serif;
-  padding: 10px 20px;
+.watchlist_container h2 {
   text-align: center;
-  margin-left: auto; /* Center the heading */
-  margin-right: auto; /* Center the heading */
-}
-
-ul.horizontal-scroll {
-  list-style: none;
-  display: grid; /* Changed from flex to grid */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); /* Added this line */
-  gap: 10px; /* Added this line */
-
-  padding: 0;
-
-  align-items: center;
-
-  overflow-x: auto;
-
-  /* Add a border */
-  border: 1px solid white;
-
-  /* Adjust padding */
-  padding: 10px; /* Top and bottom padding */
-
-  background-color: #000;
-}
-
-ul.horizontal-scroll li {
-  flex: none;
-  text-align: center;
-}
-
-ul.horizontal-scroll li img {
-  max-width: auto; /* Change to auto */
-}
-
-ul.horizontal-scroll::-webkit-scrollbar {
-  width: auto; /* Change to auto */
-}
-
-ul.shows_horizontal-scroll::before {
-  width: auto; /* Change to auto */
+  border: thin solid #2cf7cb;
+  margin-bottom: 10vh;
 }

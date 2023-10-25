@@ -77,7 +77,7 @@ const TopRatedShowsDetails = () => {
     showVideos();
   }, [showID, apiKey]);
 
-  //storing IDNumber in database
+  //storing showName in database
   const watchlistHandler = async () => {
     if (!auth.currentUser) {
       setWatchlistMessage("Create an account to access watchlist");
@@ -89,7 +89,10 @@ const TopRatedShowsDetails = () => {
       return;
     }
     const db = getDatabase();
-    const idRef = ref(db, `IMDbData/${auth.currentUser.uid}/idNumber/`);
+    const idRef = ref(
+      db,
+      `IMDbData/watchlistshows/${auth.currentUser.uid}/idNumber/`
+    );
 
     // Get the current data
     const snapshot = await get(idRef);
@@ -97,7 +100,8 @@ const TopRatedShowsDetails = () => {
     // Check if the IDNumber already exists
     if (!snapshot.val() || !Object.values(snapshot.val()).includes(showID)) {
       // If it doesn't exist, push the new IDNumber
-      await push(idRef, showID);
+
+      await push(idRef, showName);
     }
   };
 

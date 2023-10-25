@@ -13,7 +13,7 @@ body {
   color: #fff;
   padding: 5px 10px;
   width: auto;
-  max-width: 1200px; /* or whatever maximum width you want */
+  max-width: 1200px;
   position: fixed;
   top: 0;
   left: 50%;
@@ -26,8 +26,7 @@ body {
   border-radius: 5px;
   text-align: center;
   color: #000000;
-  padding: 8px 0px; /* top/bottom padding is 8px, left/right padding is 2px */
-
+  padding: 8px 0px;
   margin-left: 40px;
   height: 20px;
   width: 80px;
@@ -73,7 +72,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px; /* Or however wide you want the drawer to be */
+  width: 200px;
   height: 100%;
   background-color: #333;
   padding: 20px;
@@ -103,11 +102,10 @@ body {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
-  margin-bottom: 5px; /* Add margin to the bottom */
+  margin-bottom: 5px;
   padding: 10px;
 }
 
-/* Add hover effect to the close button */
 .close-button:hover {
   color: #2cf7cb;
   border: thin solid white;
@@ -117,7 +115,6 @@ body {
   border: thin solid white;
 }
 
-/* MainNavigation.css */
 .menu {
   display: flex;
   flex-direction: column;
@@ -140,21 +137,20 @@ body {
 .dropdown-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out; /* Adjust the transition duration and easing as needed */
+  transition: max-height 0.5s ease-in-out;
 }
 
-/* Add a keyframe animation for smoother sliding */
 @keyframes slide-down {
   from {
     max-height: 0;
   }
   to {
-    max-height: 1000px; /* Adjust to a suitable maximum height */
+    max-height: 1000px;
   }
 }
 
 .open .dropdown-content {
-  animation: slide-down 0.5s ease-in-out forwards; /* Apply the keyframe animation */
+  animation: slide-down 0.5s ease-in-out forwards;
 }
 
 .dropdown-content a {
@@ -163,10 +159,9 @@ body {
   text-decoration: none;
   display: block;
 
-  border-bottom: 1px solid white; /* Add a bottom border */
+  border-bottom: 1px solid white;
 }
 
-/* Style the dropdown button when open */
 .open .movies-dropdown-button,
 .open .tvshows-dropdown-button {
   color: white;
@@ -185,11 +180,35 @@ body {
   background-color: #333;
 }
 
-/* Style the next menu item when open */
 .open + .menu-item {
-  margin-top: 10px; /* Adjust the margin to create space for the dropdown */
+  margin-top: 10px;
 }
 
 .menu_button:hover {
   border-color: #2cf7cb;
+}
+.watchlist_access_message {
+  color: red;
+}
+@media only screen and (max-width: 390px) {
+  .header {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-left: -50px;
+  }
+
+  .header h1 {
+    width: 10%;
+    text-align: center;
+  }
+
+  .searchBar[type="search"] {
+    width: 300%;
+    text-align: center;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }

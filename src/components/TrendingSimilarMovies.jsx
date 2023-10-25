@@ -33,7 +33,7 @@ const TrendingSimilarMovies = () => {
         <h2 className="more_like_this">More Like This</h2>
         <ul className="similar_horizontal-scroll">
           {similarShowList.map((item) => (
-            <li>
+            <li key={item.id}>
               <Link
                 to={`/similartrendingmovie/${item.id}`}
                 onClick={() => {
