@@ -41,7 +41,7 @@ const Popular = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="popular_container">
           <ul className="horizontal-scroll">
             {posterList.map((item) => (
               <Link to={`/movies/${item.id}`} key={item.id}>

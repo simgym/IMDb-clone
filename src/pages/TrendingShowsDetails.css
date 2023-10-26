@@ -1,3 +1,6 @@
+.layout_container {
+  margin-top: 55vh;
+}
 .show-details-container {
   display: flex;
   flex-wrap: wrap;
@@ -109,4 +112,18 @@
 .show_video_container li {
   margin-right: 10px;
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 390px) {
+  .show_title {
+    margin-top: 1500px;
+  }
+  .show_container {
+    margin-bottom: -1900px;
+  }
+  .show_video_container {
+    margin-bottom: -1000px;
+  }
+  .item_comment_section {
+    margin-top: 500px;
+  }
 }

@@ -111,11 +111,13 @@
 }
 
 @media only screen and (max-width: 390px) {
-  body {
-    overflow: scroll; /* Makes the page scrollable if the content is larger than the screen size */
-    zoom: 0.5;
+  .show_title {
+    margin-top: 500px;
   }
-  .comment_searched_shows {
-    margin-top: 430px;
+  .show_detail_container {
+    margin-bottom: -1900px;
+  }
+  .show_video_container {
+    margin-bottom: -1000px;
   }
 }

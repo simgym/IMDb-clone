@@ -1,3 +1,14 @@
 .movie_title {
   margin-top: 0vh;
 }
+@media only screen and (max-width: 390px) {
+  .movie_title {
+    margin-top: 1500px;
+  }
+  .detail_container {
+    margin-bottom: -1900px;
+  }
+  .video_container {
+    margin-bottom: -1000px;
+  }
+}

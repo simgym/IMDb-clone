@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
+
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import UpcomingMoviesComments from "../components/UpcomingComments";
 import UpcomingSimilar from "../components/UpcomingSimilar";
+import "./UpcomingDetails.css";
 
 const UpcomingDetails = () => {
   const dispatch = useDispatch();
@@ -155,73 +156,75 @@ const UpcomingDetails = () => {
     "Loading..."
   ) : (
     <>
-      <div className="movie_title">
-        <h1>{title}</h1>
-      </div>
-      <div className="movie-details-container">
-        <div className="poster-container">
-          <div className="detail_poster">
-            {posterDetails.backdrop_path && (
-              <img
-                src={`https://image.tmdb.org/t/p/original${posterDetails.backdrop_path}`}
-                alt="Backdrop"
-              />
-            )}
-            <p className="movie_tagline">{tagline}</p>
-            <p className="movie_tagline">{`Release Date : ${releaseDate}`}</p>
-            <button onClick={watchlistHandler}>+ watchlist</button>
-          </div>
+      <div className="layout_container">
+        <div className="movie_title">
+          <h1>{title}</h1>
         </div>
-
-        <div className="movie_details">
-          <div className="movie_overview">
-            <p>{overview}</p>
-          </div>
-          <div className="movie_genres_details genres-list">
-            <p className="genres_title">Genres:</p>
-            {genresList.map((item, index) => (
-              <div className="genre-item" key={index}>
-                <li>{`${item.name} `}</li>
-              </div>
-            ))}
-            <p className="movie_status">
-              | <span className="movie_status-yellow">Status:</span>{" "}
-              {` ${status} |`}
-            </p>
-            <p className="movie_language">
-              <span className="movie_language-yellow">Language:</span>{" "}
-              {originalLanguage}
-            </p>
-          </div>
-        </div>
-
-        <div className="detail_container">
-          <ul className="video_container">
-            {video.map((videoItem) => (
-              <li key={videoItem.id}>
-                <iframe
-                  title={videoItem.name}
-                  width="320"
-                  height="180"
-                  src={`https://www.youtube.com/embed/${videoItem.key}`}
-                  allowFullScreen
-                ></iframe>
-              </li>
-            ))}
-          </ul>
-          {watchlistMessage && (
-            <div>
-              <p className="watchlist_error">{watchlistMessage}</p>
-              <Link to="/signup">Sign up</Link>
+        <div className="movie-details-container">
+          <div className="poster-container">
+            <div className="detail_poster">
+              {posterDetails.backdrop_path && (
+                <img
+                  src={`https://image.tmdb.org/t/p/original${posterDetails.backdrop_path}`}
+                  alt="Backdrop"
+                />
+              )}
+              <p className="movie_tagline">{tagline}</p>
+              <p className="movie_tagline">{`Release Date : ${releaseDate}`}</p>
+              <button onClick={watchlistHandler}>+ watchlist</button>
             </div>
-          )}
+          </div>
+
+          <div className="movie_details">
+            <div className="movie_overview">
+              <p>{overview}</p>
+            </div>
+            <div className="movie_genres_details genres-list">
+              <p className="genres_title">Genres:</p>
+              {genresList.map((item, index) => (
+                <div className="genre-item" key={index}>
+                  <li>{`${item.name} `}</li>
+                </div>
+              ))}
+              <p className="movie_status">
+                | <span className="movie_status-yellow">Status:</span>{" "}
+                {` ${status} |`}
+              </p>
+              <p className="movie_language">
+                <span className="movie_language-yellow">Language:</span>{" "}
+                {originalLanguage}
+              </p>
+            </div>
+          </div>
+
+          <div className="detail_container">
+            <ul className="video_container">
+              {video.map((videoItem) => (
+                <li key={videoItem.id}>
+                  <iframe
+                    title={videoItem.name}
+                    width="320"
+                    height="180"
+                    src={`https://www.youtube.com/embed/${videoItem.key}`}
+                    allowFullScreen
+                  ></iframe>
+                </li>
+              ))}
+            </ul>
+            {watchlistMessage && (
+              <div>
+                <p className="watchlist_error">{watchlistMessage}</p>
+                <Link to="/signup">Sign up</Link>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div>
-        <UpcomingMoviesComments />
-      </div>
-      <div>
-        <UpcomingSimilar />
+        <div className="item_comment_section">
+          <UpcomingMoviesComments />
+        </div>
+        <div>
+          <UpcomingSimilar />
+        </div>
       </div>
     </>
   );

@@ -47,21 +47,24 @@ const Upcoming = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <ul className="horizontal-scroll">
-          {upcomingList.map((item) => (
-            <Link to={`/upcoming/${item.id}`} key={item.id}>
-              <li>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                  alt={item.title}
-                  onClick={() => {
-                    localStorage.setItem("clickedUpcomingID", item.id);
-                  }}
-                />
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="upcoming_container">
+          {" "}
+          <ul className="horizontal-scroll">
+            {upcomingList.map((item) => (
+              <Link to={`/upcoming/${item.id}`} key={item.id}>
+                <li>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                    alt={item.title}
+                    onClick={() => {
+                      localStorage.setItem("clickedUpcomingID", item.id);
+                    }}
+                  />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   );

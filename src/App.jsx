@@ -25,7 +25,14 @@ import SimilarSearchedShowDetails from "./pages/SimilarSearchedShowDetails";
 import GenreMovies from "./components/GenreMovies";
 import GenreMovieDetails from "./pages/GenreMovieDetails";
 import CelebDetails from "./pages/CelebDetails";
+/*
+------------------------------------------------------------------------------------------            
+                 STEPS LEFT
+1.Improve overall styling
+2.Remove meaningless comments before pushing to github
 
+------------------------------------------------------------------------------------------
+ */
 function App() {
   const router = createBrowserRouter([
     {

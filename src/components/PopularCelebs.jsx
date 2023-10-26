@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Upcoming.css";
 const PopularCelebs = () => {
   const [popularCelebsList, setPopularCelebsList] = useState([]);
   const [error, setError] = useState(null);
@@ -39,25 +40,27 @@ const PopularCelebs = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <ul className="horizontal-scroll">
-          {popularCelebsList.map((item) => (
-            <Link to={`/celebs/${item.id}`} key={item.id}>
-              <li>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                  alt={item.title}
-                  onClick={() => {
-                    localStorage.setItem("clickedCelebsID", item.id);
-                    localStorage.setItem(
-                      "clickedCelebsName",
-                      item.original_name
-                    );
-                  }}
-                />
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="upcoming_container">
+          <ul className="horizontal-scroll">
+            {popularCelebsList.map((item) => (
+              <Link to={`/celebs/${item.id}`} key={item.id}>
+                <li>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                    alt={item.original_name}
+                    onClick={() => {
+                      localStorage.setItem("clickedCelebsID", item.id);
+                      localStorage.setItem(
+                        "clickedCelebsName",
+                        item.original_name
+                      );
+                    }}
+                  />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   );

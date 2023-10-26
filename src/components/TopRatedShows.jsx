@@ -45,25 +45,28 @@ const TopRatedShows = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <ul className="horizontal-scroll">
-          {topShowsList.map((item) => (
-            <Link to={`/TopRatedShow/${item.id}`} key={item.id}>
-              <li>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                  alt={item.title}
-                  onClick={() => {
-                    localStorage.setItem("clickedTopRatedShowID", item.id);
-                    localStorage.setItem(
-                      "clickedTopRatedShowName",
-                      item.original_name
-                    );
-                  }}
-                />
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="topratedShows_container">
+          {" "}
+          <ul className="horizontal-scroll">
+            {topShowsList.map((item) => (
+              <Link to={`/TopRatedShow/${item.id}`} key={item.id}>
+                <li>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                    alt={item.title}
+                    onClick={() => {
+                      localStorage.setItem("clickedTopRatedShowID", item.id);
+                      localStorage.setItem(
+                        "clickedTopRatedShowName",
+                        item.original_name
+                      );
+                    }}
+                  />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   );

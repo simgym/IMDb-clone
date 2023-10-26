@@ -60,9 +60,16 @@ body {
 }
 
 @media only screen and (max-width: 390px) {
+  /* * {
+    border: 1px solid red !important;
+  } */
+
   body {
-    min-width: 100%;
-    margin: 0;
+    overflow-x: hidden;
+    zoom: 0.5;
+  }
+
+  .homepage_wrapper {
     overflow-x: hidden;
   }
 
@@ -70,7 +77,8 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: 430vh;
+    margin-top: 310vh;
+    margin-left: 0px;
   }
 
   .section-container {
@@ -78,16 +86,14 @@ body {
   }
 
   .popular {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: sticky;
     top: 70px;
-    border: thin solid #2cf7cb;
+    border: thin solid #2cf7cb; /* Adjust this */
     color: white;
     font-family: "Amazon Ember", sans-serif;
     padding: 10px 20px;
     text-align: center;
+    max-width: 10%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
@@ -98,11 +104,12 @@ body {
     position: sticky;
     color: white;
     font-family: "Amazon Ember", sans-serif;
-    padding: 10px 20px;
+    padding: 0;
     font-size: xx-large;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   .popular_moviesHeading {
@@ -120,6 +127,7 @@ body {
 
   .content-container {
     display: inline-block;
-    max-width: 100%;
+    max-width: 50%;
+    margin-left: 1150px;
   }
 }

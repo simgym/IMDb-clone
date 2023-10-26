@@ -111,75 +111,77 @@ const TopRatedShowsDetails = () => {
 
   return (
     <>
-      <div className="show_title">
-        <h1>{showDetailsObj.name}</h1>
-      </div>
-      <div className="show-details-container">
-        <div className="show_poster-container">
-          <div className="show_detail_poster">
-            {showDetailsObj.backdrop_path && (
-              <img
-                src={`https://image.tmdb.org/t/p/original${showDetailsObj.backdrop_path}`}
-                alt="Backdrop"
-              />
-            )}
-            <p className="show_tagline">{`Release Date : ${showDetailsObj?.first_air_date}`}</p>
-            <button onClick={watchlistHandler}>+ watchlist</button>
-          </div>
+      <div className="layout_container">
+        <div className="show_title">
+          <h1>{showDetailsObj.name}</h1>
         </div>
-
-        <div className="show_details">
-          <div className="show_overview">
-            <p>{showDetailsObj.overview}</p>
-          </div>
-          <div className="show_genres_details genres-list">
-            {/* Include your code for genresList and other properties here */}
-
-            <p className="show_status">
-              <span className="show_status-yellow">Country:</span>{" "}
-              {` ${showDetailsObj.origin_country} |`}
-            </p>
-            <p className="show_language">
-              <span className="show_language-yellow">Language:</span>{" "}
-              {showDetailsObj.original_language}
-            </p>
-          </div>
-        </div>
-
-        <div className="show_detail_container">
-          {showVideosList && Array.isArray(showVideosList) && (
-            <ul className="show_video_container">
-              {showVideosList.map((videoItem) => (
-                <li key={videoItem.id}>
-                  {" "}
-                  {/* Use the 'id' property as the key */}
-                  {videoItem.key &&
-                    videoItem.key.trim() !== "" && ( // Check if 'key' exists and is not empty
-                      <iframe
-                        title={videoItem.name}
-                        width="320"
-                        height="180"
-                        src={`https://www.youtube.com/embed/${videoItem.key}`}
-                        allowFullScreen
-                      ></iframe>
-                    )}
-                </li>
-              ))}
-            </ul>
-          )}
-          {watchlistMessage && (
-            <div>
-              <p className="watchlist_error">{watchlistMessage}</p>
-              <Link to="/signup">Sign up</Link>
+        <div className="show-details-container">
+          <div className="show_poster-container">
+            <div className="show_detail_poster">
+              {showDetailsObj.backdrop_path && (
+                <img
+                  src={`https://image.tmdb.org/t/p/original${showDetailsObj.backdrop_path}`}
+                  alt="Backdrop"
+                />
+              )}
+              <p className="show_tagline">{`Release Date : ${showDetailsObj?.first_air_date}`}</p>
+              <button onClick={watchlistHandler}>+ watchlist</button>
             </div>
-          )}
+          </div>
+
+          <div className="show_details">
+            <div className="show_overview">
+              <p>{showDetailsObj.overview}</p>
+            </div>
+            <div className="show_genres_details genres-list">
+              {/* Include your code for genresList and other properties here */}
+
+              <p className="show_status">
+                <span className="show_status-yellow">Country:</span>{" "}
+                {` ${showDetailsObj.origin_country} |`}
+              </p>
+              <p className="show_language">
+                <span className="show_language-yellow">Language:</span>{" "}
+                {showDetailsObj.original_language}
+              </p>
+            </div>
+          </div>
+
+          <div className="show_detail_container">
+            {showVideosList && Array.isArray(showVideosList) && (
+              <ul className="show_video_container">
+                {showVideosList.map((videoItem) => (
+                  <li key={videoItem.id}>
+                    {" "}
+                    {/* Use the 'id' property as the key */}
+                    {videoItem.key &&
+                      videoItem.key.trim() !== "" && ( // Check if 'key' exists and is not empty
+                        <iframe
+                          title={videoItem.name}
+                          width="320"
+                          height="180"
+                          src={`https://www.youtube.com/embed/${videoItem.key}`}
+                          allowFullScreen
+                        ></iframe>
+                      )}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {watchlistMessage && (
+              <div>
+                <p className="watchlist_error">{watchlistMessage}</p>
+                <Link to="/signup">Sign up</Link>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div>
-        <TopRatedShowComment />
-      </div>
-      <div>
-        <TopRatedSimilarShows />
+        <div className="item_comment_section">
+          <TopRatedShowComment />
+        </div>
+        <div>
+          <TopRatedSimilarShows />
+        </div>
       </div>
     </>
   );

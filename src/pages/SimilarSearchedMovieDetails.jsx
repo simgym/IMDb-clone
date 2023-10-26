@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
+
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import "./SimilarSearchedMovieDetails.css";
 
 const SimilarSearchedMovieDetails = () => {
   const { similarID } = useParams();

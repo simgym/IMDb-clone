@@ -42,21 +42,24 @@ const TopRatedMovies = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <ul className="horizontal-scroll">
-          {topMoviesList.map((item) => (
-            <Link to={`/topRatedMovie/${item.id}`} key={item.id}>
-              <li>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                  alt={item.title}
-                  onClick={() => {
-                    localStorage.setItem("clickedTopRatedMovieID", item.id);
-                  }}
-                />
-              </li>
-            </Link>
-          ))}
-        </ul>
+        <div className="topratedMovies_container">
+          {" "}
+          <ul className="horizontal-scroll">
+            {topMoviesList.map((item) => (
+              <Link to={`/topRatedMovie/${item.id}`} key={item.id}>
+                <li>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                    alt={item.title}
+                    onClick={() => {
+                      localStorage.setItem("clickedTopRatedMovieID", item.id);
+                    }}
+                  />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
       )}
     </>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, push, get } from "firebase/database";
+import "./SimilarSearchedShowDetails.css";
 
 const SimilarSearchedShowDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});

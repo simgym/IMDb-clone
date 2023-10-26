@@ -1,23 +1,27 @@
-.show-details-container {
+.layout_container {
+  margin-top: 55vh;
+}
+.movie-details-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.show_title {
+.movie_title {
   text-align: left;
   margin-left: 225px;
   margin-bottom: 40px;
+  margin-top: 35vh;
 }
 
-.show_poster-container {
+.poster-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.show_detail_poster {
+.detail_poster {
   width: 250px;
   border-radius: 3px;
   overflow: hidden;
@@ -25,17 +29,17 @@
   margin-top: 0;
 }
 
-.show_detail_poster img {
+.detail_poster img {
   width: 100%;
   max-height: 350px;
   display: block;
 }
-.show_tagline {
+.movie_tagline {
   margin-top: 10px;
   font-weight: bold;
 }
 
-.show_details {
+.movie_details {
   border: 1px solid #fff;
   padding: 20px;
   border-radius: 5px;
@@ -45,48 +49,48 @@
   max-width: 60%;
 }
 
-.show_overview {
+.movie_overview {
   flex: 1;
   font-size: 16px;
   margin-top: 20px;
 }
 
-.show_genres_details {
+.movie_genres_details {
   font-size: 14px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.show_genres-list {
+.genres-list {
   list-style: none;
   padding: 0;
   display: flex;
 }
 
-.show_genres_title {
+.genres_title {
   margin-right: 5px;
-  color: yellow;
+  color: #2cf7cb;
 }
 
-.show_status {
+.movie_status {
   margin-right: 5px;
 }
-.show_status_title {
-  color: yellow;
+.movie_status_title {
+  color: #2cf7cb;
 }
-.show_status-yellow {
-  color: yellow;
+.movie_status-yellow {
+  color: #2cf7cb;
 }
-.show_language-yellow {
-  color: yellow;
+.movie_language-yellow {
+  color: #2cf7cb;
 }
 
-.show_genre-item {
+.genre-item {
   margin-right: 5px;
 }
 
-.show_detail_container {
+.detail_container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -94,7 +98,7 @@
   align-items: center;
 }
 
-.show_video_container {
+.video_container {
   list-style: none;
   padding: 0;
   display: flex;
@@ -102,20 +106,28 @@
   max-height: 400px;
   overflow-y: auto;
   justify-content: center;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
-.show_video_container li {
+.video_container li {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+.watchlist_error {
+  color: #2cf7cb;
+}
+.item_comment_section {
+  text-align: center;
+}
 
 @media only screen and (max-width: 390px) {
-  body {
-    overflow: scroll; /* Makes the page scrollable if the content is larger than the screen size */
-    zoom: 0.5;
+  .movie_title {
+    margin-top: 400px;
   }
-  .comment_searched_shows {
-    margin-top: 430px;
+  .detail_container {
+    margin-bottom: -1900px;
+  }
+  .video_container {
+    margin-bottom: -1000px;
   }
 }

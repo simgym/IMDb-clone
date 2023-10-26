@@ -112,3 +112,12 @@
 .watchlist_error {
   color: yellow;
 }
+@media only screen and (max-width: 390px) {
+  body {
+    overflow: scroll; /* Makes the page scrollable if the content is larger than the screen size */
+    zoom: 0.5;
+  }
+  .searched_movie_comments {
+    margin-top: 300px;
+  }
+}

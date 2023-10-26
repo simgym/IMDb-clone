@@ -6,7 +6,6 @@ import { getAuth } from "firebase/auth";
 import { getDatabase, ref, push, get } from "firebase/database";
 
 import "./ShowsSearchDetails.css";
-import WatchList from "./WatchList";
 
 const ShowsSearchDetails = () => {
   const showName = localStorage.getItem("searchedName");
@@ -131,7 +130,7 @@ const ShowsSearchDetails = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <main>
+        <main className="layout_container">
           {" "}
           <div className="show_title">
             <h1>{showName}</h1>
@@ -195,10 +194,10 @@ const ShowsSearchDetails = () => {
               )}
             </div>
           </div>
-          <div>
+          <div className="comment_searched_shows">
             <SearchedCommentSection />
           </div>
-          <div>
+          <div className="simialr_searched_shows">
             <SimilarSearchedShow />
           </div>
         </main>

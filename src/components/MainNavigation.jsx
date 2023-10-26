@@ -6,8 +6,11 @@ import { searchAction } from "../store/searchStorage";
 import { getAuth } from "firebase/auth";
 import SearchDropdownMenu from "./SearchDropdownMenu";
 import Genres from "./Genres";
+import { useLocation } from "react-router-dom";
 
 const MainNavigation = () => {
+  const location = useLocation();
+  const currentPage = location.pathname === "/" ? "homepage" : "otherpage";
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -30,12 +33,9 @@ const MainNavigation = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
-  // const searchHandler = (event) => {
-  //   dispatch(searchAction.search(event.target.value));
-  // };
   const searchItemHandler = (event) => {
     setSearchValue(event.target.value);
-    // dispatch(searchAction.search(event.target.value)); this was being used in searchDropdown inside searchItem but i changed it to localStorage.getItem()
+
     localStorage.setItem("searchedItm", event.target.value);
     setShowMenu(false);
   };
@@ -48,7 +48,7 @@ const MainNavigation = () => {
 
   return (
     <>
-      <header className="header">
+      <header className={`header ${currentPage}`}>
         <button className="menu_button" onClick={toggleDrawerHandler}>
           ☰
         </button>
@@ -62,7 +62,6 @@ const MainNavigation = () => {
                 type="search"
                 placeholder="Search IMDb"
                 className="searchBar"
-                // onChange={searchHandler}
                 onChange={searchItemHandler}
                 value={searchValue}
               />
@@ -118,6 +117,7 @@ const MainNavigation = () => {
               </div>
             )}
             <li
+              className="genre_title"
               onClick={() => {
                 setOpenGenreList((prevState) => !prevState);
               }}

@@ -41,7 +41,7 @@ const TrendingShows = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div className="trending_container">
           <ul className="shows_horizontal-scroll">
             {showList.map((item) => {
               return (

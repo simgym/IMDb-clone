@@ -43,3 +43,36 @@ ul.similar_horizontal-scroll::before:hover {
 .more_like_this {
   text-align: center;
 }
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+ul.similar_horizontal-scroll li:hover {
+  animation: expand 0.5s ease-in-out forwards;
+}
+@media only screen and (max-width: 390px) {
+  ul.similar_horizontal-scroll {
+    display: grid; /* Changes the display to grid */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    ); /* Creates a responsive number of columns */
+    grid-gap: 0.5px; /* Adds space between grid items */
+    overflow-x: auto;
+    padding-left: 70px; /* Adds space on the left side of the grid */
+  }
+
+  ul.similar_horizontal-scroll li {
+    flex-basis: 100%; /* Takes up full width of the grid cell */
+  }
+
+  ul.similar_horizontal-scroll li img {
+    width: 100%; /* Adjusts the image width to fit the grid cell */
+    height: auto;
+  }
+}

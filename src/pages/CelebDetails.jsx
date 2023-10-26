@@ -48,7 +48,7 @@ const CelebDetails = () => {
       {error ? (
         <p>{error}</p>
       ) : (
-        <div>
+        <div className="celeb_layout_container">
           <h1 className="celeb_name">Name : {celebName}</h1>
 
           <ul className="celeb_details">
@@ -56,6 +56,7 @@ const CelebDetails = () => {
               <li key={index}>
                 {item.poster_path ? (
                   <img
+                    className="celeb_images"
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     alt={item.original_title}
                   />

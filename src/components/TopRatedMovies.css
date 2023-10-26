@@ -51,3 +51,8 @@ ul.shows_horizontal-scroll::before {
 ul.shows_horizontal-scroll::before:hover {
   background-color: #555;
 }
+@media screen and (max-width: 390px) {
+  .topratedMovies_container {
+    width: 19.5%;
+  }
+}
