@@ -6,3 +6,6 @@
   border: thin solid #2cf7cb;
   margin-bottom: 10vh;
 }
+.watchlist_container h1 {
+  text-align: center;
+}

@@ -6,6 +6,7 @@ const WatchList = () => {
   return (
     <>
       <main className="watchlist_container">
+        <h1>Watchlist</h1>
         <h2>Movies</h2>
         <div>
           <WatchListMovies />
