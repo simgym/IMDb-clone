@@ -55,7 +55,7 @@ ul.similar_horizontal-scroll::before:hover {
 ul.similar_horizontal-scroll li:hover {
   animation: expand 0.5s ease-in-out forwards;
 }
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 600px) {
   ul.similar_horizontal-scroll {
     display: grid; /* Changes the display to grid */
     grid-template-columns: repeat(

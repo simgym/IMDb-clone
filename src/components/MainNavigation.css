@@ -195,7 +195,7 @@ body {
 .watchlist_access_message {
   color: red;
 }
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 600px) {
   .header {
     flex-direction: row;
     justify-content: center;
@@ -233,8 +233,8 @@ body {
     flex-direction: row;
     justify-content: center;
     width: 10%;
-    margin-left: 100px;
+
     zoom: 0.6;
-    margin-left: -1850px;
+    margin-left: -2000px;
   }
 }

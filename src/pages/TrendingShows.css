@@ -40,7 +40,7 @@ ul.shows_horizontal-scroll::-webkit-scrollbar {
 ul.shows_horizontal-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 600px) {
   .trending_container {
     width: 19.5%;
   }

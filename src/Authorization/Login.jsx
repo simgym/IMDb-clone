@@ -18,8 +18,6 @@ const Login = () => {
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    //using createUserWithEmailAndPassword function for authentication
-
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,

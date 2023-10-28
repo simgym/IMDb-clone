@@ -47,7 +47,7 @@
   animation: scroll 250s linear infinite;
   overflow: hidden;
 }
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 600px) {
   .details_box {
     margin-left: 5px;
     max-width: 100%;

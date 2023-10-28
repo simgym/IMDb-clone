@@ -24,7 +24,6 @@ body {
   padding: 10px 20px;
   text-align: center;
   margin-left: 1500px;
-  margin-bottom: 50px;
 }
 
 .popular_moviesHeading {
@@ -59,14 +58,9 @@ body {
   max-width: 36.4%;
 }
 
-@media only screen and (max-width: 390px) {
-  /* * {
-    border: 1px solid red !important;
-  } */
-
+@media only screen and (max-width: 600px) {
   body {
     overflow-x: hidden;
-    zoom: 0.5;
   }
 
   .homepage_wrapper {
@@ -77,8 +71,8 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: 310vh;
-    margin-left: 0px;
+    margin-top: 2500px; /* Adjust this */
+    margin-left: 0; /* Adjust this */
   }
 
   .section-container {
@@ -120,14 +114,16 @@ body {
     top: 150px;
   }
 
-  .scroll-container {
-    overflow-x: auto;
-    overflow-y: hidden;
+  .section-container {
+    width: 100%;
+    padding-right: 0; /* Add this */
+    padding-left: 0; /* Add this */
   }
 
   .content-container {
     display: inline-block;
-    max-width: 50%;
-    margin-left: 1150px;
+    max-width: 54%; /* Adjust this */
+    margin-left: 1100px; /* Adjust this */
+    margin-right: 0; /* Add this */
   }
 }

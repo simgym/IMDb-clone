@@ -110,7 +110,7 @@
   margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 600px) {
   body {
     overflow: scroll; /* Makes the page scrollable if the content is larger than the screen size */
     zoom: 0.5;

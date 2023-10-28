@@ -30,6 +30,7 @@ import CelebDetails from "./pages/CelebDetails";
                  STEPS LEFT
 1.Improve overall styling
 2.Remove meaningless comments before pushing to github
+3. Apply better media queries and also some details in similar has green color titles instead of yello so fix that
 
 ------------------------------------------------------------------------------------------
  */

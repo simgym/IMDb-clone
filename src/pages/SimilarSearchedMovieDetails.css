@@ -120,7 +120,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 600px) {
   .movie_title {
     margin-top: 400px;
   }

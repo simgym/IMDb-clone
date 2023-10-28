@@ -33,9 +33,9 @@
 
 @media (max-width: 600px) {
   .modal {
-    margin-top: 2.2%;
-    width: auto;
-    left: 5%;
+    margin-top: 0%;
+    width: 15.2%;
+    left: 4%;
     right: 5%;
 
     transform: translateY(-50%);
