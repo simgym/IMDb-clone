@@ -60,7 +60,7 @@ const MainNavigation = () => {
               <input
                 id="search"
                 type="search"
-                placeholder="Search IMDb"
+                placeholder="Search ADVi"
                 className="searchBar"
                 onChange={searchItemHandler}
                 value={searchValue}
