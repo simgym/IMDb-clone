@@ -48,7 +48,6 @@ ul.shows_horizontal-scroll::before {
   bottom: 0;
 }
 
-/* Optional: Style the pseudo-element */
 ul.shows_horizontal-scroll::before:hover {
   background-color: #555;
 }
