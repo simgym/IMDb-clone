@@ -71,8 +71,8 @@ body {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: 2500px; /* Adjust this */
-    margin-left: 0; /* Adjust this */
+    margin-top: 2500px; 
+    margin-left: 0;
   }
 
   .section-container {
@@ -82,7 +82,7 @@ body {
   .popular {
     position: sticky;
     top: 70px;
-    border: thin solid #2cf7cb; /* Adjust this */
+    border: thin solid #2cf7cb; 
     color: white;
     font-family: "Amazon Ember", sans-serif;
     padding: 10px 20px;
@@ -116,14 +116,14 @@ body {
 
   .section-container {
     width: 100%;
-    padding-right: 0; /* Add this */
-    padding-left: 0; /* Add this */
+    padding-right: 0; 
+    padding-left: 0;
   }
 
   .content-container {
     display: inline-block;
-    max-width: 54%; /* Adjust this */
-    margin-left: 1100px; /* Adjust this */
-    margin-right: 0; /* Add this */
+    max-width: 54%; 
+    margin-left: 1100px; 
+    margin-right: 0; 
   }
 }
