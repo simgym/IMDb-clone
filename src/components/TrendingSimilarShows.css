@@ -57,22 +57,22 @@ ul.similar_horizontal-scroll li:hover {
 }
 @media only screen and (max-width: 600px) {
   ul.similar_horizontal-scroll {
-    display: grid; /* Changes the display to grid */
+    display: grid; 
     grid-template-columns: repeat(
       auto-fit,
       minmax(150px, 1fr)
-    ); /* Creates a responsive number of columns */
-    grid-gap: 0.5px; /* Adds space between grid items */
+    ); 
+    grid-gap: 0.5px; 
     overflow-x: auto;
-    padding-left: 70px; /* Adds space on the left side of the grid */
+    padding-left: 70px; 
   }
 
   ul.similar_horizontal-scroll li {
-    flex-basis: 100%; /* Takes up full width of the grid cell */
+    flex-basis: 100%; 
   }
 
   ul.similar_horizontal-scroll li img {
-    width: 100%; /* Adjusts the image width to fit the grid cell */
+    width: 100%; 
     height: auto;
   }
 }
