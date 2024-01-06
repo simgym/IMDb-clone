@@ -6,7 +6,7 @@ import "./WatchListMovies.css";
 const WatchListMovies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [watchlistMoviePosterDetails, setWatchlistMoviePosterDetails] =
-    useState([]); // Change this to an array
+    useState([]); 
   const [IDNumberList, setIDNumberList] = useState([]);
 
   const auth = getAuth();
