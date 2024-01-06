@@ -51,7 +51,7 @@ const TrendingShows = () => {
                       src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                       alt={item.name}
                       onClick={() => {
-                        console.log("Image clicked"); // Add this line for debugging
+                        console.log("Image clicked"); 
                         localStorage.setItem(
                           "clickedPopularShowsName",
                           item.name
