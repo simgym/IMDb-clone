@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
+import "./PopularMoviesDetails.css";
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import TopRatedShowComment from "../components/TopRatedShowComments";
 const TopRatedShowsDetails = () => {
   const [showDetailsObj, setShowDetailsObj] = useState({});
   const [showVideosList, setShowVideosList] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // Start with isLoading set to true
+  const [isLoading, setIsLoading] = useState(true); 
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
   const showName = localStorage.getItem("clickedTopRatedShowName");
@@ -43,7 +43,7 @@ const TopRatedShowsDetails = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setIsLoading(false); // Set isLoading to false once the data has been fetched or in case of an error
+        setIsLoading(false); 
       }
     };
     showDetails();
@@ -83,7 +83,7 @@ const TopRatedShowsDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
@@ -106,7 +106,7 @@ const TopRatedShowsDetails = () => {
   };
 
   if (isLoading) {
-    return "Loading..."; // Show a loading message while fetching data
+    return "Loading..."; 
   }
 
   return (
@@ -134,7 +134,6 @@ const TopRatedShowsDetails = () => {
               <p>{showDetailsObj.overview}</p>
             </div>
             <div className="show_genres_details genres-list">
-              {/* Include your code for genresList and other properties here */}
 
               <p className="show_status">
                 <span className="show_status-yellow">Country:</span>{" "}
@@ -153,9 +152,9 @@ const TopRatedShowsDetails = () => {
                 {showVideosList.map((videoItem) => (
                   <li key={videoItem.id}>
                     {" "}
-                    {/* Use the 'id' property as the key */}
+             
                     {videoItem.key &&
-                      videoItem.key.trim() !== "" && ( // Check if 'key' exists and is not empty
+                      videoItem.key.trim() !== "" && ( 
                         <iframe
                           title={videoItem.name}
                           width="320"
