@@ -17,7 +17,6 @@ const PopularMoviesDetails = () => {
 
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  // Loading states
   const [isLoading, setIsLoading] = useState(false);
 
   // Movie Details
@@ -130,7 +129,7 @@ const PopularMoviesDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage("");
       }, 3000);
 
       return;
@@ -141,7 +140,7 @@ const PopularMoviesDetails = () => {
       `IMDbData/watchlistmovies/${auth.currentUser.uid}/idNumber/`
     );
 
-    // Get the current data
+    // Getting the current data
     const snapshot = await get(idRef);
 
     // Check if the IDNumber already exists
