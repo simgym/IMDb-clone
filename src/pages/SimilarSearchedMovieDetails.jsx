@@ -18,7 +18,6 @@ const SimilarSearchedMovieDetails = () => {
 
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  // Loading states
   const [isLoading, setIsLoading] = useState(false);
 
   // Movie Details
@@ -129,7 +128,7 @@ const SimilarSearchedMovieDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
