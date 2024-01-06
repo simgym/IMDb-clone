@@ -11,7 +11,7 @@ import SearchedCommentSection from "../components/SearchedCommentSection";
 const MovieSearchDetails = () => {
   const IDNumber = localStorage.getItem("searchedId");
 
-  // Loading states
+  
   const [isLoading, setIsLoading] = useState(false);
 
   // Movie Details
@@ -132,7 +132,7 @@ const MovieSearchDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
@@ -143,12 +143,12 @@ const MovieSearchDetails = () => {
       `IMDbData/watchlistmovies/${auth.currentUser.uid}/idNumber/`
     );
 
-    // Get the current data
+    // Getting the current data
     const snapshot = await get(idRef);
 
-    // Check if the IDNumber already exists
+    // Checking if the IDNumber already exists
     if (!snapshot.val() || !Object.values(snapshot.val()).includes(IDNumber)) {
-      // If it doesn't exist, push the new IDNumber
+      // If it doesn't exist then push the new IDNumber
       await push(idRef, IDNumber);
     }
   };
