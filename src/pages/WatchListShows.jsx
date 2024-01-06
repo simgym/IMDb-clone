@@ -7,7 +7,7 @@ const WatchListShows = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [watchlistShowPosterDetails, setWatchlistShowPosterDetails] = useState(
     []
-  ); // Change this to an array
+  ); 
   const [showNameList, setShowNameList] = useState([]);
 
   const auth = getAuth();
