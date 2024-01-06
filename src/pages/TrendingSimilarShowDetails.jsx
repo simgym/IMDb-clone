@@ -143,9 +143,8 @@ const TrendingSimilarShowDetails = () => {
               {showVideosList.map((videoItem) => (
                 <li key={videoItem.id}>
                   {" "}
-                  {/* Use the 'id' property as the key */}
                   {videoItem.key &&
-                    videoItem.key.trim() !== "" && ( // Check if 'key' exists and is not empty
+                    videoItem.key.trim() !== "" && ( 
                       <iframe
                         title={videoItem.name}
                         width="320"
