@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
+import "./PopularMoviesDetails.css"; 
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const GenreMovieDetails = () => {
 
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  // Loading states
+  
   const [isLoading, setIsLoading] = useState(false);
 
   // Movie Details
@@ -128,7 +128,7 @@ const GenreMovieDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
@@ -139,12 +139,12 @@ const GenreMovieDetails = () => {
       `IMDbData/watchlistmovies/${auth.currentUser.uid}/idNumber/`
     );
 
-    // Get the current data
+    // Getting the current data
     const snapshot = await get(idRef);
 
-    // Check if the IDNumber already exists
+    // Checking if the IDNumber already exists
     if (!snapshot.val() || !Object.values(snapshot.val()).includes(IDNumber)) {
-      // If it doesn't exist, push the new IDNumber
+      // If it doesn't exist then push the new IDNumber
       await push(idRef, IDNumber);
     }
   };
