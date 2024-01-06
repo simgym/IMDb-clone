@@ -103,7 +103,7 @@ const ShowsSearchDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
@@ -171,9 +171,9 @@ const ShowsSearchDetails = () => {
                   {showVideosList.map((videoItem) => (
                     <li key={videoItem.id}>
                       {" "}
-                      {/* Use the 'id' property as the key */}
+                    
                       {videoItem.key &&
-                        videoItem.key.trim() !== "" && ( // Check if 'key' exists and is not empty
+                        videoItem.key.trim() !== "" && ( 
                           <iframe
                             title={videoItem.name}
                             width="320"
