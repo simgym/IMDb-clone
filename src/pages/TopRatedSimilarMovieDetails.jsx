@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { IDAction } from "../store/IDStorage";
-import "./PopularMoviesDetails.css"; // Import your CSS file
+import "./PopularMoviesDetails.css"; 
 import { getDatabase, ref, push, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -18,7 +18,6 @@ const TopRatedSimilarMovieDetails = () => {
 
   const [watchlistMessage, setWatchlistMessage] = useState("");
 
-  // Loading states
   const [isLoading, setIsLoading] = useState(false);
 
   // Movie Details
@@ -129,7 +128,7 @@ const TopRatedSimilarMovieDetails = () => {
       setWatchlistMessage("Create an account to access watchlist");
 
       setTimeout(() => {
-        setWatchlistMessage(""); // This will clear the message after 2 seconds
+        setWatchlistMessage(""); 
       }, 3000);
 
       return;
